@@ -1,4 +1,4 @@
-package Reto2;
+package Conexion;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
