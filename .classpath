@@ -2,8 +2,10 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
-	<classpathentry kind="lib" path="librerias/com.mysql.jdbc_5.1.5.jar"/>
-	<classpathentry kind="lib" path="librerias/mysql-connector-java-8.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/com.mysql.jdbc_5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/commons-dbcp2-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/commons-pool2-2.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/mysql-connector-java-8.0.13.jar"/>
 	<classpathentry kind="output" path="bin/main"/>
 </classpath>

@@ -1,8 +1,9 @@
 package Conexion;
 
-import java.sql.Connection;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Main {
 	
@@ -16,23 +17,26 @@ public class Main {
 	
 	public static void prueba() throws SQLException {
 		
-		ConexionBD miConexion = new ConexionBD();
-		ConsultaBD miConsulta = new ConsultaBD();
-		Connection con = miConexion.ConectarBD();
+		ModificarBD modificador = new ModificarBD();
 		
-		String query= "SELECT * FROM prueba";
-		String nombre= "";
-		String apellido= "";
+		ResultSet resultado = modificador.selectDePrueba();
 		
 		
-		ResultSet rs = miConsulta.hacerConsultaBD(con, query);	
+		//----------------------------
 		
-		while(rs.next()) {
-			nombre = rs.getString("nombre");
-			apellido = rs.getString("apellido");
+		ArrayList<Integer> codigos = new ArrayList<Integer>();
+		
+		try {
+			while (resultado.next()) {
+				int  codigo = resultado.getInt("DeptCo");
+				codigos.add(codigo);
+	        }
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		
-		System.out.println("nombre: " + nombre );
-		System.out.println("apellido: " + apellido );
+		for (Integer integer : codigos) {
+			System.out.println(integer);
 		}
+	}
 }

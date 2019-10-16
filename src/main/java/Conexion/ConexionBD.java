@@ -1,29 +1,39 @@
 package Conexion;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import org.apache.commons.dbcp2.BasicDataSource;
 
 public class ConexionBD {
 	
-	private Connection conexion = null;
-	private final String driver = "com.mysql.cj.jdbc.Driver";
-	private final String username = "reto2";
-	private final String password = "12345";
-	private final String urlBBDD = "jdbc:mysql://localhost:3306/reto2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-
-	public Connection ConectarBD()
-	{
-		
-		try
-		{
-			Class.forName(driver);
-			conexion = DriverManager.getConnection(urlBBDD, username, password);
-		
-		}
-			catch (Exception e) {		
-				System.out.println("Error de conexion " + e);
-			}
-		return conexion;
+	private BasicDataSource dataSource;
+	
+	public ConexionBD() {
+		crearPoolConexiones();
 	}
-
+    
+    public void crearPoolConexiones() {
+    	String[] datos = getDatos();
+    	dataSource = new BasicDataSource();
+        dataSource.setUrl("jdbc:mysql://" + datos[0] + "/" + datos[1] + "?serverTimezone=UTC");
+        dataSource.setUsername(datos[2]);
+        dataSource.setPassword(datos[3]);
+        dataSource.setMinIdle(5);
+        dataSource.setMaxIdle(10);
+        dataSource.setMaxOpenPreparedStatements(100);
+    }
+     
+    public Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
+    }
+    
+    public String[] getDatos() {
+    	Textos textos = new Textos();
+    	final String NombreFichero = System.getProperty("user.dir") + "\\datosBD.txt";
+    	return textos.cogerDatosDeFichero(NombreFichero);
+    }
+    
 }
+
+
