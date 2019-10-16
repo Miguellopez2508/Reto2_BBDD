@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<empleados>
+	<empleado>
+
+		<ID> 001 </ID>
+		<Salario> 1200 </Salario>
+		<Nombre> Aitor </Nombre>
+		<Apellido> Gonzalez </Apellido>
+		<Responsabilidad> jefe del centro </Responsabilidad>
+		<Gerente> 0 </Gerente>
+		<DeptCo> 101 </DeptCo>
+		<EsJefe> 1 </EsJefe>
+
+	</empleado>
+	<empleado>
+
+		<ID> 002 </ID>
+		<Nombre> Alyson </Nombre>
+		<Apellido> Blanco </Apellido>
+		<Responsabilidad> jefe de informatica </Responsabilidad>
+		<Gerente> 001 </Gerente>
+		<DeptCo> 101 </DeptCo>
+		<EsJefe> 1 </EsJefe>
+
+	</empleado>
+	<empleado>
+
+		<ID> 003 </ID>
+		<Nombre> Maitane </Nombre>
+		<Apellido> Diaz </Apellido>
+		<Responsabilidad> profesora </Responsabilidad>
+		<Gerente> 002 </Gerente>
+		<DeptCo> 101 </DeptCo>
+		<EsJefe> 0 </EsJefe>
+
+	</empleado>
+</empleados>

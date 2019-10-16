@@ -85,13 +85,16 @@ public class Textos {
 					Element eElement = (Element) nNode;
 					
 					datos = datos +
-							nNode.getNodeName() + " " + (temp+1) + ": " + "------------------------------------\n" +
+							nNode.getNodeName() + " " + (temp+1) + ": " + "\n" + "------------------------------------" + "\n" +
 						
-							"ID: " + eElement.getElementsByTagName("").item(0).getTextContent() + "\n" +
-							"nombre : " + eElement.getElementsByTagName("nombre").item(0).getTextContent() + "\n" +
-							"apellido : " + eElement.getElementsByTagName("apellido").item(0).getTextContent() + "\n" +
-							" : " + eElement.getElementsByTagName("edad").item(0).getTextContent() + "\n" +
-							"Salario : " + eElement.getElementsByTagName("salario").item(0).getTextContent()+ "\n" + "---------------------" + "\n";
+							"ID: " + eElement.getElementsByTagName("ID").item(0).getTextContent() + "\n" +
+							"Salario: " + eElement.getElementsByTagName("Salario").item(0).getTextContent() + "\n" +
+							"Nombre : " + eElement.getElementsByTagName("Nombre").item(0).getTextContent() + "\n" +
+							"Apellido : " + eElement.getElementsByTagName("Apellido").item(0).getTextContent() + "\n" +
+							"Responsabilidad : " + eElement.getElementsByTagName("Responsabilidad").item(0).getTextContent() + "\n" +
+							"Gerente : " + eElement.getElementsByTagName("Gerente").item(0).getTextContent() + "\n" + 
+							"DeptCo : " + eElement.getElementsByTagName("DeptCo").item(0).getTextContent() + "\n" +
+							"EsJefe : " + eElement.getElementsByTagName("EsJefe").item(0).getTextContent();
 
 				} 
 			}

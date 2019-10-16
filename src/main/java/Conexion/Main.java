@@ -11,7 +11,9 @@ public class Main {
 	
 	public static void main(String[]  args) throws SQLException {
 	
+		Textos misTextos = new Textos();
 		prueba();
+		System.out.println(misTextos.leerXml("C:\\WORKSPACE\\Reto2_BBDD\\textos\\empleados.xml"));
 	
 	}
 	
