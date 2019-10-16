@@ -1,10 +1,18 @@
 package Conexion;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 public class Textos {
 	
@@ -37,10 +45,8 @@ public class Textos {
 				}
 			}
 		} catch (Exception e) {
-			//Implementar logger?
 			System.out.println(e.getMessage());
-			JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Error en la base de datos",JOptionPane.ERROR_MESSAGE);
-			System.exit(0);
+
 		} finally {
 			try {
 				fileReader.close();
@@ -52,25 +58,48 @@ public class Textos {
 		return datos;
 	}
 	
-	/**
-	 * Encripta los datos con MD5
-	 * @param txt Lo que quieres encriptar
-	 * @return Una cadena en MD5
-	 */
-	public String encriptar(String txt) {
-        try {
-            java.security.MessageDigest md = java.security.MessageDigest
-                    .getInstance("MD5");
-            byte[] array = md.digest(txt.getBytes());
-            StringBuffer sb = new StringBuffer();
-            for (int i = 0; i < array.length; ++i) {
-                sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100)
-                        .substring(1, 3));
-            }
-            return sb.toString();
-        } catch (java.security.NoSuchAlgorithmException e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
+
+	public  String leerXml(String archivoEntrada){
+		
+		String datos = "";
+		
+		try {
+
+			File fXmlFile = new File(archivoEntrada);
+			
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+					
+			doc.getDocumentElement().normalize();
+					
+			NodeList nList = doc.getElementsByTagName("empleado");
+					
+
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+ 
+				Node nNode = nList.item(temp);
+						
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+					Element eElement = (Element) nNode;
+					
+					datos = datos +
+							nNode.getNodeName() + " " + (temp+1) + ": " + "------------------------------------\n" +
+						
+							"ID: " + eElement.getElementsByTagName("").item(0).getTextContent() + "\n" +
+							"nombre : " + eElement.getElementsByTagName("nombre").item(0).getTextContent() + "\n" +
+							"apellido : " + eElement.getElementsByTagName("apellido").item(0).getTextContent() + "\n" +
+							" : " + eElement.getElementsByTagName("edad").item(0).getTextContent() + "\n" +
+							"Salario : " + eElement.getElementsByTagName("salario").item(0).getTextContent()+ "\n" + "---------------------" + "\n";
+
+				} 
+			}
+		    } catch (Exception e) {
+			e.printStackTrace();
+		    }
+			return datos;
+			
+		  }
+	
 }

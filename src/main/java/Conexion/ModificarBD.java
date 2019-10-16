@@ -29,15 +29,14 @@ public class ModificarBD {
 			conn = pool.getConnection();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
-			JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Error en la base de datos", JOptionPane.ERROR_MESSAGE);
-			System.exit(0);
+			
 		}
 	}
 
 	public ResultSet selectDePrueba() {
 		PreparedStatement stmt = null;
 		ResultSet result = null;
-		String query = "SELECT DeptCo from Departamentos";
+		String query = "SELECT DeptCo from departamento";
 		
 		try {
 			stmt = conn.prepareStatement(query);
