@@ -3,6 +3,7 @@ package Conexion;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Arrays;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -101,5 +102,71 @@ public class Textos {
 			return datos;
 			
 		  }
+	
+	
+	public String leerCsv(String archivoEntraStrg1) {
+		
+		try {     
+			
+			BufferedReader br = new BufferedReader(new FileReader(archivoEntraStrg1));
+			String line = br.readLine();
+			String acumulador = "";
+			int i=1;
+			
+			while (null!=line) {
+
+				String[] parts = line.split(";");
+				acumulador = acumulador + "\n" + i + ". " + Arrays.toString(parts) + "\n";
+				i++;
+				line = br.readLine();
+			}
+			br.close();
+			
+			return acumulador;
+			
+		} catch (Exception e) {
+			System.out.println("No se encuentra el archivo");
+		}
+		
+		return "";
+	}
+	
+	public String[] cogerDatosCsV(String datosBD) {
+		String[] datos = new String[2];
+		FileReader fileReader = null;
+		BufferedReader buffer = null;
+		
+		try {
+			fileReader = new FileReader(datosBD);
+			buffer = new BufferedReader(fileReader);
+			String linea = "";
+			String clave = "";
+			String dato = "";
+			
+			while ((linea = buffer.readLine()) != null ) {
+				int i = 1;
+				String ii = String.valueOf(i);
+				clave = linea.substring(0, linea.indexOf(":"));
+				dato = linea.substring(linea.indexOf(":") + 2);
+				
+				switch (clave) {
+					case ii + ". [": datos[0] = dato; break;
+					case ", ": datos[1] = dato; break;
+				}
+				i++;
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+
+		} finally {
+			try {
+				fileReader.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		return datos;
+	}
 	
 }
