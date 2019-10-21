@@ -162,16 +162,16 @@ public class Textos {
 			String dato = "";
 			
 			while ((linea = buffer.readLine()) != null ) {
-				int i = 1;
-				String ii = String.valueOf(i);
-				clave = linea.substring(0, linea.indexOf(":"));
-				dato = linea.substring(linea.indexOf(":") + 2);
+				
+				
+				clave = linea.substring(0, linea.indexOf("["));
+				dato = linea.substring(linea.indexOf("["));
 				
 				switch (clave) {
-					case ii + ". [": datos[0] = dato; break;
+					case ". [": datos[0] = dato; break;
 					case ", ": datos[1] = dato; break;
 				}
-				i++;
+				
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
