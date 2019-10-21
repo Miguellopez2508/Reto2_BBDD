@@ -60,9 +60,9 @@ public class Textos {
 	}
 	
 
-	public  String leerXml(String archivoEntrada){
+	public String[][] leerXml(String archivoEntrada){
 		
-		String datos = "";
+		String[][] datos = new String[6][1];
 		
 		try {
 
@@ -85,23 +85,38 @@ public class Textos {
 
 					Element eElement = (Element) nNode;
 					
-					datos = datos +
-							nNode.getNodeName() + " " + (temp+1) + ": " + "\n" + "------------------------------------" + "\n" +
-						
-							"ID: " + eElement.getElementsByTagName("ID").item(0).getTextContent() + "\n" +
-							"Salario: " + eElement.getElementsByTagName("Salario").item(0).getTextContent() + "\n" +
-							"Nombre : " + eElement.getElementsByTagName("Nombre").item(0).getTextContent() + "\n" +
-							"Apellido : " + eElement.getElementsByTagName("Apellido").item(0).getTextContent() + "\n" +
-							"Responsabilidad : " + eElement.getElementsByTagName("Responsabilidad").item(0).getTextContent() + "\n" +
-							"Gerente : " + eElement.getElementsByTagName("Gerente").item(0).getTextContent() + "\n" + 
-							"DeptCo : " + eElement.getElementsByTagName("DeptCo").item(0).getTextContent() + "\n" +
-							"EsJefe : " + eElement.getElementsByTagName("EsJefe").item(0).getTextContent();
+					datos[0][temp] =  eElement.getElementsByTagName("Salario").item(0).getTextContent();
+					datos[1][temp] =  eElement.getElementsByTagName("Nombre").item(0).getTextContent();
+					datos[2][temp] =  eElement.getElementsByTagName("Apellido").item(0).getTextContent();
+					datos[3][temp] =  eElement.getElementsByTagName("Responsabilidad").item(0).getTextContent();
+					datos[4][temp] =  eElement.getElementsByTagName("Gerente").item(0).getTextContent();
+					datos[5][temp] =  eElement.getElementsByTagName("DeptCo").item(0).getTextContent();
+					datos[6][temp] =  eElement.getElementsByTagName("EsJefe").item(0).getTextContent();
+					
 
 				} 
 			}
 		    } catch (Exception e) {
 			e.printStackTrace();
 		    }
+		
+		
+		
+			for (int x=0; x < datos.length; x++) 
+			{
+				for (int y=0; y < datos[x].length; y++) 
+				{
+
+					System.out.print (" " + datos[x][y] + " "); 
+
+				}
+				System.out.println();
+
+			}	
+		
+		
+		
+		
 			return datos;
 			
 		  }
