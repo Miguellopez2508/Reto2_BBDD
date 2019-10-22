@@ -12,14 +12,14 @@ public class Main {
 	public static void main(String[]  args) throws SQLException {
 	
 		Textos misTextos = new Textos();
-		//prueba();
+		prueba();
 		misTextos.leerXml("C:\\WORKSPACE\\Reto2_BBDD\\textos\\empleados.xml");
 	
 		
 	
 	}
 	
-	/*public static void prueba() throws SQLException {
+	public static void prueba() throws SQLException {
 		
 		ModificarBD modificador = new ModificarBD();
 		
@@ -42,5 +42,5 @@ public class Main {
 		for (Integer integer : codigos) {
 			System.out.println(integer);
 		}
-	}*/
+	}
 }

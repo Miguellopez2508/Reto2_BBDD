@@ -69,4 +69,28 @@ public class ModificarBD {
 		return result;
 	}
 	
+	public ResultSet insertarEmpleados(String[][] datos, int i) {
+		PreparedStatement stmt = null;
+		ResultSet result = null;
+		String query = "INSERT INTO empleados (`Salario`, `Nombre`, `Apellido` ,`Responsabilidad` ,`Gerente`, `DeptCo`, `EsJefe`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		try {
+			stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			
+			stmt.setFloat(1, Float.parseFloat(datos[0][i]));
+			stmt.setString(2, datos[0][i+1]);
+			stmt.setString(3, datos[0][i+2]);
+			stmt.setString(4, datos[0][i+3]);
+			stmt.setString(5, datos[0][i+4]);
+			stmt.setInt(6, Integer.parseInt(datos[0][i+5]));
+			stmt.setBoolean(7, Boolean.parseBoolean(datos[0][i+6]));
+			
+			stmt.executeUpdate();
+			result = stmt.getGeneratedKeys();
+			
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return result;
+	}
+	
 }

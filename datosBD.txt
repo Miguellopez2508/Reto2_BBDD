@@ -1,4 +1,4 @@
 url: localhost
-database: colegio
+database: reto2
 user: root
 password: 
