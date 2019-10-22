@@ -47,4 +47,26 @@ public class ModificarBD {
 		return result;
 	}
 	
+	/**
+	 * Inserta un departamento y su ubicacion
+	 * @param datos
+	 * @param i Es la vuelta que da en los datos originales en formato String[]
+	 * @return
+	 */
+	public ResultSet insertarDepartamentos(String[] datos, int i) {
+		PreparedStatement stmt = null;
+		ResultSet result = null;
+		String query = "INSERT INTO Departamento (`Nombre`, `Ubicación`) VALUES (?, ?)";
+		try {
+			stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			stmt.setString(1, datos[i]);
+			stmt.setString(2, datos[i + 1]);
+			stmt.executeUpdate();
+			result = stmt.getGeneratedKeys();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return result;
+	}
+	
 }
