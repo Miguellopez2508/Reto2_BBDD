@@ -1,38 +1,33 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<empleados
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='LibrosEsquema.xsd'>
 
-<empleados>
-	<empleado>
-
-		<ID> 001 </ID>
-		<Salario> 1200 </Salario>
-		<Nombre> Aitor </Nombre>
-		<Apellido> Gonzalez </Apellido>
-		<Responsabilidad> jefe del centro </Responsabilidad>
-		<Gerente> 0 </Gerente>
-		<DeptCo> 101 </DeptCo>
-		<EsJefe> 1 </EsJefe>
-
-	</empleado>
-	<empleado>
-
-		<ID> 002 </ID>
-		<Nombre> Alyson </Nombre>
-		<Apellido> Blanco </Apellido>
-		<Responsabilidad> jefe de informatica </Responsabilidad>
-		<Gerente> 001 </Gerente>
-		<DeptCo> 101 </DeptCo>
-		<EsJefe> 1 </EsJefe>
-
-	</empleado>
-	<empleado>
-
-		<ID> 003 </ID>
-		<Nombre> Maitane </Nombre>
-		<Apellido> Diaz </Apellido>
-		<Responsabilidad> profesora </Responsabilidad>
-		<Gerente> 002 </Gerente>
-		<DeptCo> 101 </DeptCo>
-		<EsJefe> 0 </EsJefe>
-
-	</empleado>
+    <empleado>
+	<salario>1300</salario>
+        <nombre>Aitor</nombre>
+        <apellido>Gonzalez</apellido>
+	<responsabilidad>jefe del centro</responsabilidad>
+	<gerente>0</gerente>
+	<deptco>1</deptco>
+	<esjefe>1</esjefe>
+    </empleado>
+    <empleado>
+	<salario>1200</salario>
+        <nombre>Alyson</nombre>
+        <apellido>Blanco</apellido>
+	<responsabilidad>jefe de informatica</responsabilidad>
+	<gerente>1</gerente>
+	<deptco>1</deptco>
+	<esjefe>1</esjefe>
+    </empleado>
+    <empleado>
+	<salario>1100</salario>
+        <nombre>Maitane</nombre>
+        <apellido>Diaz</apellido>
+	<responsabilidad>profesora</responsabilidad>
+	<gerente>2</gerente>
+	<deptco>1</deptco>
+	<esjefe>0</esjefe>
+    </empleado>
 </empleados>

@@ -62,7 +62,7 @@ public class Textos {
 
 	public String[][] leerXml(String archivoEntrada){
 		
-		String[][] datos = new String[6][1];
+		String[][] datos = new String[7][3];
 		
 		try {
 
@@ -74,52 +74,52 @@ public class Textos {
 					
 			doc.getDocumentElement().normalize();
 					
-			NodeList nList = doc.getElementsByTagName("empleado");
-					
-
+			NodeList nList = doc.getElementsByTagName(doc.getDocumentElement().getNodeName());
+			
+			 
 			for (int temp = 0; temp < nList.getLength(); temp++) {
  
 				Node nNode = nList.item(temp);
-						
+							 
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
 					Element eElement = (Element) nNode;
 					
-					datos[0][temp] =  eElement.getElementsByTagName("Salario").item(0).getTextContent();
-					datos[1][temp] =  eElement.getElementsByTagName("Nombre").item(0).getTextContent();
-					datos[2][temp] =  eElement.getElementsByTagName("Apellido").item(0).getTextContent();
-					datos[3][temp] =  eElement.getElementsByTagName("Responsabilidad").item(0).getTextContent();
-					datos[4][temp] =  eElement.getElementsByTagName("Gerente").item(0).getTextContent();
-					datos[5][temp] =  eElement.getElementsByTagName("DeptCo").item(0).getTextContent();
-					datos[6][temp] =  eElement.getElementsByTagName("EsJefe").item(0).getTextContent();
+					
+					for (int i =0; i < 3; i++){
+						datos[0][i] = eElement.getElementsByTagName("salario").item(i).getTextContent();
+						datos[1][i] = eElement.getElementsByTagName("nombre").item(i).getTextContent();
+						datos[2][i] = eElement.getElementsByTagName("apellido").item(i).getTextContent();
+						datos[3][i] = eElement.getElementsByTagName("responsabilidad").item(i).getTextContent();
+						datos[4][i] = eElement.getElementsByTagName("gerente").item(i).getTextContent();
+						datos[5][i] = eElement.getElementsByTagName("deptco").item(i).getTextContent();
+						datos[6][i] = eElement.getElementsByTagName("esjefe").item(i).getTextContent();
+					}
+			
 					
 
 				} 
 			}
 		    } catch (Exception e) {
 			e.printStackTrace();
-		    }
-		
-		
+		    }		
 		
 			for (int x=0; x < datos.length; x++) 
 			{
 				for (int y=0; y < datos[x].length; y++) 
 				{
 
-					System.out.print (" " + datos[x][y] + " "); 
+					System.out.print (datos[x][y] + " \t "); 
 
 				}
 				System.out.println();
 
-			}	
-		
-		
-		
+			}			
 		
 			return datos;
 			
 		  }
+	
 	
 	
 	public String leerCsv(String archivoEntraStrg1) {
