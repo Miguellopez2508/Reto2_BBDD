@@ -122,66 +122,35 @@ public class Textos {
 		  }
 	
 	
-	public String leerCsv(String archivoEntraStrg1) {
-		
-		try {     
-			
-			BufferedReader br = new BufferedReader(new FileReader(archivoEntraStrg1));
-			String line = br.readLine();
-			String acumulador = "";
-			int i=1;
-			
-			while (null!=line) {
-
-				String[] parts = line.split(";");
-				acumulador = acumulador + "\n" + i + ". " + Arrays.toString(parts) + "\n";
-				i++;
-				line = br.readLine();
-			}
-			br.close();
-			
-			return acumulador;
-			
-		} catch (Exception e) {
-			System.out.println("No se encuentra el archivo");
-		}
-		
-		return "";
-	}
-	
+	/**
+	 * 
+	 * @param datosBD
+	 * @return
+	 */
 	public String[] cogerDatosCsV(String datosBD) {
-		String[] datos = new String[2];
+		String[] datos = new String[6];
 		FileReader fileReader = null;
-		BufferedReader buffer = null;
+		BufferedReader buffer = null;	
 		
 		try {
 			fileReader = new FileReader(datosBD);
 			buffer = new BufferedReader(fileReader);
+			
 			String linea = "";
-			String clave = "";
-			String dato = "";
+			int i=0;
 			
 			while ((linea = buffer.readLine()) != null ) {
+				String[] parts = linea.split(";");
 				
-				
-				clave = linea.substring(0, linea.indexOf("["));
-				dato = linea.substring(linea.indexOf("["));
-				
-				switch (clave) {
-					case ". [": datos[0] = dato; break;
-					case ", ": datos[1] = dato; break;
+				if (!Arrays.toString(parts).equals("[Nombre, Ubicacion]")) {
+					datos[i] = parts[0];
+					datos[i+1] = parts[1];
+					i = i + 2;
 				}
-				
 			}
+			
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
-
-		} finally {
-			try {
-				fileReader.close();
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
+			e.printStackTrace();
 		}
 		
 		return datos;
