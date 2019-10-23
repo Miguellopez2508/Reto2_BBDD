@@ -1,0 +1,78 @@
+.jfx-date-picker .input-line {
+  -fx-background-color: #1976d2;
+}
+
+.jfx-date-picker .input-focused-line {
+  -fx-background-color: #f57c00;
+}
+
+.fondo {
+	-fx-background-color: #1976d2;
+}
+
+.jfx-snackbar-content {
+    -fx-background-color: #212121;
+    -fx-padding: 20px;
+}
+
+
+.jfx-tab-pane .headers-region
+{
+  -fx-background-color: #1976d2;
+}
+
+.jfx-tab-pane .tab-header-background
+{
+  -fx-background-color: #1976d2;
+}
+
+.jfx-button {
+  	-fx-background-color: #f57c00;
+  	-fx-text-fill: #ffffff;
+}
+
+
+.tarjeta {
+	-fx-background-color: #fff;
+	-fx-border-insets: 5px;
+	-fx-background-insets: 5px;
+	-fx-border-radius: 1;
+	-fx-background-radius: 5;
+}
+
+.fondoImg {
+	-fx-background-image: url('././Fondo2.png');
+	-fx-background-size: 100% 300%;
+}
+
+.botonInverso
+{
+	-fx-background-color: #FFFFFF;
+	-fx-text-fill: #f57c00;
+}
+
+.fondoBlanco
+{
+	-fx-background-color: #FFFFFF;
+}
+
+#filtroBusquedas
+{
+	-fx-background-color: #FFFFFF;
+	-fx-border-insets: 5px;
+	-fx-border-radius: 1;
+	-fx-background-radius: 5;
+}
+
+.jfx-decorator {
+    -fx-decorator-color: #444444;
+}
+
+.jfx-decorator .jfx-decorator-buttons-container {
+    -fx-background-color: -fx-decorator-color;
+}
+
+.jfx-decorator .resize-border {
+    -fx-border-color: -fx-decorator-color;
+    -fx-border-width: 0 4 4 4;
+}

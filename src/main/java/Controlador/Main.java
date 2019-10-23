@@ -26,7 +26,7 @@ public class Main extends Application {
      * Inicia el programa
      */
     public void start(Stage stage) {
-        Controlador.stage = stage;
+        Main.stage = stage;
         iniciarPrograma();
     }
 	
