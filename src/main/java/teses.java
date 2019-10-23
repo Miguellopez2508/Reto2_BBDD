@@ -15,7 +15,7 @@ public class teses {
 	
 	@Test
 	public void test() {
-		String loc = "C:\\workspace\\Reto2_BBDD\\departamentos.csv";
+		String loc = "C:\\workspace\\Reto2_BBDD\\textos\\departamentos.csv";
 		String datos[] = text.cogerDatosCsV(loc);
 		
 		for (int i = 0; i < datos.length; i = i + 2) {
