@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <empleados
-    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-    xsi:noNamespaceSchemaLocation='LibrosEsquema.xsd'>
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
 
     <empleado>
 	<salario>1300</salario>
