@@ -104,18 +104,7 @@ public class Textos {
 			e.printStackTrace();
 		    }		
 		
-			for (int x=0; x < datos.length; x++) 
-			{
-				for (int y=0; y < datos[x].length; y++) 
-				{
-
-					System.out.print (datos[x][y] + " \t "); 
-
-				}
-				System.out.println();
-
-			}			
-		
+			
 			return datos;
 			
 		  }

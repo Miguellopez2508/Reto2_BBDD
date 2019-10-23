@@ -77,12 +77,12 @@ public class ModificarBD {
 			stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 			
 			stmt.setFloat(1, Float.parseFloat(datos[0][i]));
-			stmt.setString(2, datos[0][i+1]);
-			stmt.setString(3, datos[0][i+2]);
-			stmt.setString(4, datos[0][i+3]);
-			stmt.setString(5, datos[0][i+4]);
-			stmt.setInt(6, Integer.parseInt(datos[0][i+5]));
-			stmt.setBoolean(7, Boolean.parseBoolean(datos[0][i+6]));
+			stmt.setString(2, datos[1][i]);
+			stmt.setString(3, datos[2][i]);
+			stmt.setString(4, datos[3][i]);
+			stmt.setString(5, datos[4][i]);
+			stmt.setInt(6, Integer.parseInt(datos[5][i]));
+			stmt.setBoolean(7, Boolean.parseBoolean(datos[6][i]));
 			
 			stmt.executeUpdate();
 			result = stmt.getGeneratedKeys();
