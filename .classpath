@@ -8,5 +8,8 @@
 	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/commons-pool2-2.6.1.jar"/>
 	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/mysql-connector-java-8.0.13.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/controlsfx-8.40.12.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/fontawesomefx-8.9.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto2_BBDD/librerias/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="output" path="bin/main"/>
 </classpath>
