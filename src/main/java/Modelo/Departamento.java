@@ -11,6 +11,10 @@ public class Departamento {
 		this.ubicacion = ubicacion;
 	}
 	
+	public Departamento() {
+		
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
