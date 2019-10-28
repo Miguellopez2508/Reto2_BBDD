@@ -32,24 +32,25 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         Main.stage = stage;
+        
         iniciarPrograma();
+       
         textos.leerXml("C:\\WORKSPACE\\Reto2_BBDD\\textos\\empleados.xml");
+
         modificar.insertarEmpleados(modelo.getEmpleados().get(0));
         System.out.println(modelo.getEmpleados().get(0).toString());
+
+
     }
 	
     /**
      * 
      */
     public static void iniciarPrograma() {
-        try{
-            modelo = new Modelo();
-            controlador = new Controlador(stage);
-            textos = new Textos(modelo); 
-            
-        } catch(Exception e1) {
-            e1.printStackTrace();
-           
-        }
+        
+        modelo = new Modelo();
+        controlador = new Controlador(stage);
+        textos = new Textos(modelo); 
+        
     }
 }
