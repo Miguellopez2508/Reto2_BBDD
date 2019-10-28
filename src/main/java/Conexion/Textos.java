@@ -15,8 +15,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import Modelo.Departamento;
 import Modelo.Modelo;
-import modelo.Cliente;
+
 
 public class Textos {
 	
@@ -131,59 +132,33 @@ public class Textos {
 	
 
 	
-	public String leerCsv(String archivoEntraStrg1) {
-		
-		try {     
-			
-			BufferedReader br = new BufferedReader(new FileReader(archivoEntraStrg1));
-			String line = br.readLine();
-			String acumulador = "";
-			int i=1;
-			
-			while (null!=line) {
-
-				String[] parts = line.split(";");
-				acumulador = acumulador + "\n" + i + ". " + Arrays.toString(parts) + "\n";
-				i++;
-				line = br.readLine();
-			}
-			br.close();
-			
-			return acumulador;
-			
-		} catch (Exception e) {
-			System.out.println("No se encuentra el archivo");
-		}
-		
-		return "";
-	}
 	
 
 	/**
 	 * 
 	 * @param datosBD
-	 * @return
 	 */
-
-	public String[] cogerDatosCsV(String datosBD) {
-		String[] datos = new String[6];
+	public void cogerDatosCsV(String datosBD) {
+		
 		FileReader fileReader = null;
-		BufferedReader buffer = null;	
+		BufferedReader buffer = null;
+		Departamento departamento;
 		
 		try {
 			fileReader = new FileReader(datosBD);
 			buffer = new BufferedReader(fileReader);
 			
 			String linea = "";
-			int i=0;
+			
 			
 			while ((linea = buffer.readLine()) != null ) {
 				String[] parts = linea.split(";");
 				
 				if (!Arrays.toString(parts).equals("[Nombre, Ubicacion]")) {
-					datos[i] = parts[0];
-					datos[i+1] = parts[1];
-					i = i + 2;
+					departamento = new Departamento();
+					departamento.setNombre(parts[0]); 
+					departamento.setUbicacion(parts[1]);
+					modelo.getDepartamentos().add(departamento);
 				}
 			}
 			
@@ -191,7 +166,6 @@ public class Textos {
 			e.printStackTrace();
 		}
 		
-		return datos;
 	}
 	
 }

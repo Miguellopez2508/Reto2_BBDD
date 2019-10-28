@@ -6,8 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import Modelo.Departamento;
 
 
 
@@ -33,34 +32,20 @@ public class ModificarBD {
 		}
 	}
 
-	public ResultSet selectDePrueba() {
-		PreparedStatement stmt = null;
-		ResultSet result = null;
-		String query = "SELECT DeptCo from departamento";
-		
-		try {
-			stmt = conn.prepareStatement(query);
-			result = stmt.executeQuery();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-		return result;
-	}
 	
 	/**
-	 * Inserta un departamento y su ubicacion
-	 * @param datos
-	 * @param i Es la vuelta que da en los datos originales en formato String[]
+	 * 
+	 * @param departamento
 	 * @return
 	 */
-	public ResultSet insertarDepartamentos(String[] datos, int i) {
+	public ResultSet insertarDepartamentos(Departamento departamento) {
 		PreparedStatement stmt = null;
 		ResultSet result = null;
 		String query = "INSERT INTO Departamento (`Nombre`, `Ubicación`) VALUES (?, ?)";
 		try {
 			stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, datos[i]);
-			stmt.setString(2, datos[i + 1]);
+			stmt.setString(1, departamento.getNombre());
+			stmt.setString(2, departamento.getUbicacion());
 			stmt.executeUpdate();
 			result = stmt.getGeneratedKeys();
 		} catch (SQLException e1) {
