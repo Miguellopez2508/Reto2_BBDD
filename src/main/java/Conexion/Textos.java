@@ -15,7 +15,17 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import Modelo.Modelo;
+import modelo.Cliente;
+
 public class Textos {
+	
+	Modelo modelo;
+	
+	public Textos (Modelo modelo) {
+		this.modelo = modelo;
+	}
+	
 	
 	/**
 	 * Separa los datos dados en un .txt y los mete en un  array de strings
@@ -94,6 +104,9 @@ public class Textos {
 						datos[4][i] = eElement.getElementsByTagName("gerente").item(i).getTextContent();
 						datos[5][i] = eElement.getElementsByTagName("deptco").item(i).getTextContent();
 						datos[6][i] = eElement.getElementsByTagName("esjefe").item(i).getTextContent();
+						
+						modelo.
+						
 					}
 			
 					
@@ -108,6 +121,12 @@ public class Textos {
 			return datos;
 			
 		  }
+	
+	
+	public void pasarDatosEmpleados() {
+		
+		
+	}
 	
 	
 
