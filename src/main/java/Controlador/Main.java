@@ -13,7 +13,7 @@ public class Main extends Application {
 	static Controlador controlador;
 	static Stage stage;
 	static Textos textos;
-	static ModificarBD modificar;
+	ModificarBD modificar = new ModificarBD();
 	
 	
 	/**
@@ -35,7 +35,7 @@ public class Main extends Application {
         iniciarPrograma();
         textos.leerXml("C:\\WORKSPACE\\Reto2_BBDD\\textos\\empleados.xml");
         modificar.insertarEmpleados(modelo.getEmpleados().get(0));
-        System.out.println(modelo.getEmpleados().toString());
+        System.out.println(modelo.getEmpleados().get(0).toString());
     }
 	
     /**
