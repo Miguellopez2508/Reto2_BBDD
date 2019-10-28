@@ -29,7 +29,7 @@ public class ConexionBD {
     }
     
     public String[] getDatos() {
-    	Textos textos = new Textos();
+    	Textos textos = new Textos(null);
     	final String NombreFichero = System.getProperty("user.dir") + "\\datosBD.txt";
     	return textos.cogerDatosDeFichero(NombreFichero);
     }

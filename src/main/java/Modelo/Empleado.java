@@ -20,6 +20,10 @@ public class Empleado {
 		this.esjefe = esjefe;
 	}
 	
+	public Empleado() {
+		
+	}
+	
 	public int getSalario() {
 		return salario;
 	}
@@ -69,6 +73,34 @@ public class Empleado {
 		this.esjefe = esjefe;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("\n");
+		builder.append("Salario :");
+		builder.append(salario);
+		builder.append("\n");
+		builder.append("Nombre :");
+		builder.append(nombre);
+		builder.append("\n");
+		builder.append("Apellido :");
+		builder.append(apellido);
+		builder.append("\n");
+		builder.append("Responsabilidad :");
+		builder.append(responsabilidad);
+		builder.append("\n");
+		builder.append("Gerente :");
+		builder.append(gerente);
+		builder.append("\n");
+		builder.append("Deptco :");
+		builder.append(deptco);
+		builder.append("\n");
+		builder.append("Esjefe :");
+		builder.append(esjefe);
+		builder.append("\n");
+
+		return builder.toString();
+	}
 	
 	
 	

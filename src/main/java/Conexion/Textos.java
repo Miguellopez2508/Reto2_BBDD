@@ -15,8 +15,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import Modelo.Empleado;
 import Modelo.Modelo;
-import modelo.Cliente;
+
 
 public class Textos {
 	
@@ -70,9 +71,8 @@ public class Textos {
 	}
 	
 
-	public String[][] leerXml(String archivoEntrada){
+	public void leerXml(String archivoEntrada){
 		
-		String[][] datos = new String[7][3];
 		
 		try {
 
@@ -97,15 +97,27 @@ public class Textos {
 					
 					
 					for (int i =0; i < 3; i++){
-						datos[0][i] = eElement.getElementsByTagName("salario").item(i).getTextContent();
-						datos[1][i] = eElement.getElementsByTagName("nombre").item(i).getTextContent();
-						datos[2][i] = eElement.getElementsByTagName("apellido").item(i).getTextContent();
-						datos[3][i] = eElement.getElementsByTagName("responsabilidad").item(i).getTextContent();
-						datos[4][i] = eElement.getElementsByTagName("gerente").item(i).getTextContent();
-						datos[5][i] = eElement.getElementsByTagName("deptco").item(i).getTextContent();
-						datos[6][i] = eElement.getElementsByTagName("esjefe").item(i).getTextContent();
 						
-						modelo.
+						Empleado empleado = new Empleado();
+						
+						int salario = Integer.parseInt(eElement.getElementsByTagName("salario").item(i).getTextContent());
+						String nombre = eElement.getElementsByTagName("nombre").item(i).getTextContent();
+						String apellido = eElement.getElementsByTagName("apellido").item(i).getTextContent();
+						String responsabilidad = eElement.getElementsByTagName("responsabilidad").item(i).getTextContent();
+						int gerente = Integer.parseInt(eElement.getElementsByTagName("gerente").item(i).getTextContent());
+						int deptco = Integer.parseInt(eElement.getElementsByTagName("deptco").item(i).getTextContent());
+						boolean esjefe = Boolean.parseBoolean(eElement.getElementsByTagName("esjefe").item(i).getTextContent());
+						
+						empleado.setSalario(salario);
+						empleado.setNombre(nombre);
+						empleado.setApellido(apellido);
+						empleado.setResponsabilidad(responsabilidad);
+						empleado.setGerente(gerente);
+						empleado.setDeptco(deptco);
+						empleado.setEsjefe(esjefe);					
+						
+						
+						modelo.getEmpleados().add(empleado);
 						
 					}
 			
@@ -117,8 +129,7 @@ public class Textos {
 			e.printStackTrace();
 		    }		
 		
-			
-			return datos;
+
 			
 		  }
 	

@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Modelo {
 	
-	ArrayList<Empleado> empleados = new ArrayList<Empleado>();
-	ArrayList<Departamento> departamentos = new ArrayList<Departamento>();
+	ArrayList<Empleado> empleados ;
+	ArrayList<Departamento> departamentos ;
 	
-	public Modelo(ArrayList<Empleado> empleados, ArrayList<Departamento> departamentos ) {
+	public Modelo() {
 		
-		this.departamentos = departamentos;
-		this.empleados = empleados;
+		this.empleados = new ArrayList<Empleado>();
+		this.departamentos =  new ArrayList<Departamento>();
 		
 	}
 

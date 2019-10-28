@@ -1,6 +1,7 @@
 package Controlador;
 
 import javafx.stage.Stage;
+import Conexion.ModificarBD;
 import Conexion.Textos;
 import Modelo.Modelo;
 import javafx.application.Application;
@@ -12,6 +13,8 @@ public class Main extends Application {
 	static Controlador controlador;
 	static Stage stage;
 	static Textos textos;
+	static ModificarBD modificar;
+	
 	
 	/**
      * Método que inicia el programa
@@ -30,6 +33,9 @@ public class Main extends Application {
     public void start(Stage stage) {
         Main.stage = stage;
         iniciarPrograma();
+        textos.leerXml("C:\\WORKSPACE\\Reto2_BBDD\\textos\\empleados.xml");
+        modificar.insertarEmpleados(modelo.getEmpleados().get(0));
+        System.out.println(modelo.getEmpleados().toString());
     }
 	
     /**
@@ -37,9 +43,10 @@ public class Main extends Application {
      */
     public static void iniciarPrograma() {
         try{
-            modelo = new Modelo(null, null);
+            modelo = new Modelo();
             controlador = new Controlador(stage);
-            textos = new Textos(modelo);
+            textos = new Textos(modelo); 
+            
         } catch(Exception e1) {
             e1.printStackTrace();
            

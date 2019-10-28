@@ -9,6 +9,8 @@ import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import Modelo.Empleado;
+
 
 
 public class ModificarBD {
@@ -69,20 +71,20 @@ public class ModificarBD {
 		return result;
 	}
 	
-	public ResultSet insertarEmpleados(String[][] datos, int i) {
+	public ResultSet insertarEmpleados(Empleado empleados) {
 		PreparedStatement stmt = null;
 		ResultSet result = null;
 		String query = "INSERT INTO empleados (`Salario`, `Nombre`, `Apellido` ,`Responsabilidad` ,`Gerente`, `DeptCo`, `EsJefe`) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try {
 			stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 			
-			stmt.setFloat(1, Float.parseFloat(datos[0][i]));
-			stmt.setString(2, datos[1][i]);
-			stmt.setString(3, datos[2][i]);
-			stmt.setString(4, datos[3][i]);
-			stmt.setString(5, datos[4][i]);
-			stmt.setInt(6, Integer.parseInt(datos[5][i]));
-			stmt.setBoolean(7, Boolean.parseBoolean(datos[6][i]));
+			stmt.setFloat (1, empleados.getSalario());
+			stmt.setString(2, empleados.getNombre());
+			stmt.setString(3, empleados.getApellido());
+			stmt.setString(4, empleados.getResponsabilidad());
+			stmt.setInt(5, empleados.getGerente());
+			stmt.setInt(6, empleados.getDeptco());
+			stmt.setBoolean(7, empleados.getEsjefe());
 			
 			stmt.executeUpdate();
 			result = stmt.getGeneratedKeys();
