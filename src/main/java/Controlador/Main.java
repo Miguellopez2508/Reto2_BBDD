@@ -14,7 +14,7 @@ public class Main extends Application {
 	public static Controlador controlador;
 	public static Stage stage;
 	
-	private static Textos textos = new Textos(modelo);
+	public static Textos textos;
 	
 	/**
      * Método que inicia el programa usando el metodo start
@@ -43,7 +43,9 @@ public class Main extends Application {
      */
     public static void iniciarPrograma() {
         modelo = new Modelo();
-        controlador = new Controlador(stage); 
+        controlador = new Controlador(stage);
+        textos = new Textos(modelo);
+    
     }
     
     /**
@@ -53,12 +55,14 @@ public class Main extends Application {
     	 textos.leerXml("C:\\WORKSPACE\\Reto2_BBDD\\textos\\empleados.xml");
     	 textos.cogerDatosCsV("C:\\WORKSPACE\\Reto2_BBDD\\textos\\departamentos.csv");
 
+    	 for (int i = 0; i < modelo.getDepartamentos().size(); i++) {
+    		 modelo.getModificar().insertarDepartamentos(modelo.getDepartamentos().get(i));
+    	 }
+    	 
     	 for (int i = 0; i < modelo.getEmpleados().size(); i++) {
     		 modelo.getModificar().insertarEmpleados(modelo.getEmpleados().get(i));
     	 }
     	 
-    	 for (int i = 0; i < modelo.getDepartamentos().size(); i++) {
-    		 modelo.getModificar().insertarDepartamentos(modelo.getDepartamentos().get(i));
-    	 }
+    	 
     }
 }
