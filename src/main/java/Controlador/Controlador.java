@@ -17,7 +17,7 @@ public class Controlador {
 		
 		this.stage = stage;
 		
-		CambiarScene("prueba.fxml");
+		CambiarScene("Principal.fxml");
 	}
 	
 	/**
@@ -37,7 +37,7 @@ public class Controlador {
 			stage.setScene(scene);
 			stage.setResizable(false);
 			stage.show();
-			
+			stageAntiguo.close();
 		}
 	}
 	
@@ -46,6 +46,7 @@ public class Controlador {
 	 * @param FXMLLink
 	 * @return
 	 */
+	
 	public Parent loadFXML(String FXMLLink) {
 		Parent FXML = null;
 		try {
