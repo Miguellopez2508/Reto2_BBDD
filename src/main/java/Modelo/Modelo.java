@@ -2,16 +2,30 @@ package Modelo;
 
 import java.util.ArrayList;
 
+import Conexion.ModificarBD;
+
 public class Modelo {
 	
-	ArrayList<Empleado> empleados ;
-	ArrayList<Departamento> departamentos ;
+	private ArrayList<Empleado> empleados ;
+	private ArrayList<Departamento> departamentos;
+	private ModificarBD modificar;
+	public boolean primeraVez;
 	
 	public Modelo() {
 		
 		this.empleados = new ArrayList<Empleado>();
 		this.departamentos =  new ArrayList<Departamento>();
+		this.modificar = new ModificarBD();
+		this.primeraVez = true;
 		
+	}
+
+	public ModificarBD getModificar() {
+		return modificar;
+	}
+
+	public void setModificar(ModificarBD modificar) {
+		this.modificar = modificar;
 	}
 
 	public ArrayList<Empleado> getEmpleados() {
