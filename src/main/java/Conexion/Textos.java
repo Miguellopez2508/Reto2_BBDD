@@ -98,8 +98,8 @@ public class Textos {
 
 					Element eElement = (Element) nNode;
 					
-					
-					for (int i =0; i < 3; i++){
+							
+					for (int i =0; i < 3 ; i++){
 						
 						Empleado empleado = new Empleado();
 						
@@ -124,8 +124,7 @@ public class Textos {
 						
 					}
 			
-					
-
+					 
 				} 
 			}
 		    } catch (Exception e) {
@@ -135,17 +134,7 @@ public class Textos {
 
 			
 		  }
-	
-	
-	public void pasarDatosEmpleados() {
 		
-		
-	}
-	
-	
-
-	
-	
 
 	/**
 	 * 
