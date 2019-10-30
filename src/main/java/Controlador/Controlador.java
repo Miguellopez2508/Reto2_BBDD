@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.jfoenix.controls.JFXDecorator;
 
+import Modelo.Modelo;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,7 +15,6 @@ public class Controlador {
 	public Stage stage;
  
 	public Controlador(Stage stage) {
-		
 		this.stage = stage;
 		
 		CambiarScene("Principal.fxml");
