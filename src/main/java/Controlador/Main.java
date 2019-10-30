@@ -37,6 +37,7 @@ public class Main extends Application {
         	cargarBasesDeDatos();
         }
         
+        System.out.println(modelo.getEmpleados().toString());
       
     }
 	

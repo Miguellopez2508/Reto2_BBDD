@@ -9,7 +9,7 @@
 		<responsabilidad>jefe del centro</responsabilidad>
 		<gerente>0</gerente>
 		<deptco>1</deptco>
-		<esjefe>1</esjefe>
+		<esjefe>true</esjefe>
     </empleado>
     <empleado>
 		<salario>1200</salario>
@@ -18,7 +18,7 @@
 		<responsabilidad>jefe de informatica</responsabilidad>
 		<gerente>1</gerente>
 		<deptco>1</deptco>
-		<esjefe>1</esjefe>
+		<esjefe>true</esjefe>
     </empleado>
     <empleado>
 		<salario>1100</salario>
@@ -27,6 +27,6 @@
 		<responsabilidad>profesora</responsabilidad>
 		<gerente>2</gerente>
 		<deptco>1</deptco>
-		<esjefe>0</esjefe>
+		<esjefe>false</esjefe>
     </empleado>
 </empleados>

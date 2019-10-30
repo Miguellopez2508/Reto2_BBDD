@@ -16,7 +16,7 @@ public class Modelo {
 		this.empleados = new ArrayList<Empleado>();
 		this.departamentos =  new ArrayList<Departamento>();
 		this.modificar = new ModificarBD();
-		this.primeraVez = true;
+		this.primeraVez = false;
 		
 	}
 

@@ -5,10 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import Modelo.Departamento;
-
 import Modelo.Empleado;
+
 
 
 
@@ -80,6 +79,24 @@ public class ModificarBD {
 		return result;
 	}
 	
+	public ResultSet verGerentes() {
+		
+		PreparedStatement stmt = null;
+		ResultSet result = null;	
+		
+		String query = "select Nombre, Apellido, ID from empleados where EsJefe= 1";
+		
+		try {
+			stmt = conn.prepareStatement(query);
+			result = stmt.executeQuery();
+		}catch (SQLException e1){
+			e1.printStackTrace();
+		}
+		
+		return result;
+		
+	
+	}
 	
 	
 }
