@@ -25,8 +25,8 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="143.0" layoutY="59.0" />
-      <JFXTextField layoutX="143.0" layoutY="103.0" />
+      <JFXTextField fx:id="tf1" layoutX="143.0" layoutY="59.0" />
+      <JFXTextField fx:id="tf2" layoutX="143.0" layoutY="103.0" />
       <Text layoutX="46.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Responsabilidad">
          <font>
             <Font size="18.0" />
@@ -37,8 +37,8 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="211.0" layoutY="151.0" />
-      <JFXTextField layoutX="116.0" layoutY="195.0" />
+      <JFXTextField fx:id="tf3" layoutX="211.0" layoutY="151.0" />
+      <JFXTextField fx:id="tf4" layoutX="116.0" layoutY="195.0" />
       <Text layoutX="46.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerente">
          <font>
             <Font size="18.0" />
@@ -56,8 +56,8 @@
          </font>
       </Text>
       <ComboBox layoutX="122.0" layoutY="280.0" prefWidth="150.0" />
-      <CheckBox layoutX="122.0" layoutY="317.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" />
-      <Button layoutX="429.0" layoutY="353.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="107.0" text="AÑADIR" />
+      <CheckBox fx:id="check1"  layoutX="122.0" layoutY="317.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" />
+      <Button layoutX="429.0" layoutY="353.0" mnemonicParsing="false" onAction="#btnAnadirEmpleado" prefHeight="32.0" prefWidth="107.0" text="AÑADIR" />
       <Button layoutX="305.0" layoutY="353.0" mnemonicParsing="false" onAction="#btnAtrasEmpleado" prefHeight="32.0" prefWidth="107.0" text="ATRAS" />
    </children>
 </AnchorPane>

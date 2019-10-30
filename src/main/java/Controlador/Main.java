@@ -3,7 +3,7 @@ package Controlador;
 import javafx.stage.Stage;
 
 import Conexion.Textos;
-
+import Modelo.Empleado;
 import Modelo.Modelo;
 import javafx.application.Application;
 
@@ -36,6 +36,8 @@ public class Main extends Application {
         if (modelo.primeraVez) {
         	cargarBasesDeDatos();
         }
+        
+      
     }
 	
     /**
