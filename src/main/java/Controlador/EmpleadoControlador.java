@@ -15,10 +15,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ComboBoxBase;
 
 public class EmpleadoControlador implements Initializable{
-		
-	Modelo modelo;
 	
-	private Main main;
 	public JFXTextField tf1,tf2,tf3,tf4;
 	public ComboBox combo1, combo2;
 	public CheckBox check1;
@@ -40,7 +37,7 @@ public class EmpleadoControlador implements Initializable{
 
     	ingresarEmpleado();
     
-    	System.out.println(modelo.getEmpleados().toString());
+    	System.out.println(Main.modelo.getEmpleados().toString());
     }
     
     
@@ -58,8 +55,8 @@ public class EmpleadoControlador implements Initializable{
       	empleado.setResponsabilidad(responsabilidad);
       	empleado.setSalario(salario);
       	
-      //	empleado.setDeptco(1);
-      //	empleado.setGerente(1);
+      	empleado.setDeptco(1);
+      	empleado.setGerente(1);
       	
       	if ((boolean) check1.isSelected() == true) {
       		empleado.setEsjefe(true);
@@ -67,7 +64,7 @@ public class EmpleadoControlador implements Initializable{
       		empleado.setEsjefe(false);
       	}
       	
-      //	modelo.getEmpleados().add(empleado);
+      	Main.modelo.getEmpleados().add(empleado);
       	
 
     	
