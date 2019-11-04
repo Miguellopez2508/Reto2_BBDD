@@ -9,8 +9,11 @@ import Conexion.ModificarBD;
 
 public class GestorBBDD {
 	
-	ModificarBD modificar = new ModificarBD();
+	ModificarBD modificar;
 
+	public GestorBBDD(ModificarBD modificar) {
+		this.modificar = modificar;
+	}
 	
 	public ArrayList<String> obtenerGerentes()
 	{

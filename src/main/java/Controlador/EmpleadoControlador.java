@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXTextField;
 
 import Modelo.Empleado;
-import Modelo.GestorBBDD;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,14 +19,13 @@ public class EmpleadoControlador implements Initializable{
 	public JFXTextField tf1,tf2,tf3,tf4;
 	public ComboBox<String> combo1, combo2;
 	public CheckBox check1;
-	public GestorBBDD gestorbd = new GestorBBDD();
-
 	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		 
-		combo1.setItems(FXCollections.observableArrayList(gestorbd.obtenerGerentes()));
+		combo1.setItems(FXCollections.observableArrayList(Main.modelo.getGestor().obtenerGerentes()));
 		
 	}
     @FXML
