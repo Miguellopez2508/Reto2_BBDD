@@ -35,7 +35,6 @@ public class Main extends Application {
         	cargarBasesDeDatos();
         }
         
-        System.out.println(modelo.getEmpleados().toString());
       
     }
 	
@@ -54,8 +53,12 @@ public class Main extends Application {
      *  Carga los objetos departamento y empleados y los sube a la BDD
      */
     public static void cargarBasesDeDatos() {
-    	 textos.leerXml("C:\\WORKSPACE\\Reto2_BBDD\\textos\\empleados.xml");
-    	 textos.cogerDatosCsV("C:\\WORKSPACE\\Reto2_BBDD\\textos\\departamentos.csv");
+    	
+    	 final String xml = System.getProperty("user.dir") + "\\empleados.xml";
+    	 final String csv = System.getProperty("user.dir") + "\\departamentos.csv";
+    	
+    	 textos.leerXml(xml);
+    	 textos.cogerDatosCsV(csv);
 
     	 for (int i = 0; i < modelo.getDepartamentos().size(); i++) {
     		 modelo.getModificar().insertarDepartamentos(modelo.getDepartamentos().get(i));

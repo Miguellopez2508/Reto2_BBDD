@@ -27,7 +27,7 @@ public class GestorBBDD {
 				String apellido = result.getString("Apellido");
 				int ID = result.getInt("ID");
 				
-				String acumular = nombre + " " + apellido + " " + ID ;
+				String acumular = nombre + " " + apellido + "-" + ID ;
 				gerentes.add(acumular);
 			}
 		} catch (SQLException e) {
@@ -51,7 +51,7 @@ public class GestorBBDD {
 				String nombre = result.getString("Nombre");
 				int ID = result.getInt("DeptCo");
 				
-				String acumular = nombre + " " + " " + ID ;
+				String acumular = nombre + "-" + ID;
 				gerentes.add(acumular);
 			}
 		} catch (SQLException e) {

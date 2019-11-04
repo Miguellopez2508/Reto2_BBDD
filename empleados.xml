@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empleados
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+
+    <empleado>
+		<salario>1300</salario>
+        <nombre>Aitor</nombre>
+        <apellido>Gonzalez</apellido>
+		<responsabilidad>jefe del centro</responsabilidad>
+		<gerente>0</gerente>
+		<deptco>1</deptco>
+		<esjefe>true</esjefe>
+    </empleado>
+    <empleado>
+		<salario>1200</salario>
+        <nombre>Alyson</nombre>
+        <apellido>Blanco</apellido>
+		<responsabilidad>jefe de informatica</responsabilidad>
+		<gerente>1</gerente>
+		<deptco>1</deptco>
+		<esjefe>true</esjefe>
+    </empleado>
+    <empleado>
+		<salario>1100</salario>
+        <nombre>Maitane</nombre>
+        <apellido>Diaz</apellido>
+		<responsabilidad>profesora</responsabilidad>
+		<gerente>2</gerente>
+		<deptco>1</deptco>
+		<esjefe>false</esjefe>
+    </empleado>
+</empleados>
