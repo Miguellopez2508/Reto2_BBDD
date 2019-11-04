@@ -97,5 +97,22 @@ public class ModificarBD {
 	
 	}
 	
+	public ResultSet verDepartamentos() {
+		
+		PreparedStatement stmt = null;
+		ResultSet result = null;	
+		
+		String query = "select Nombre, DeptCo from departamento";
+		
+		try {
+			stmt = conn.prepareStatement(query);
+			result = stmt.executeQuery();
+		}catch (SQLException e1){
+			e1.printStackTrace();
+		}
+		
+		return result;
+	}
+	
 	
 }

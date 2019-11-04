@@ -40,5 +40,29 @@ public class GestorBBDD {
 	
 	
 	}
+	
+	public ArrayList<String> obtenerDepartamentos()
+	{
+		ResultSet result = modificar.verDepartamentos();
+		ArrayList<String> gerentes = new ArrayList<String>();
+		
+		try {
+			while(result.next()) {
+				String nombre = result.getString("Nombre");
+				int ID = result.getInt("DeptCo");
+				
+				String acumular = nombre + " " + " " + ID ;
+				gerentes.add(acumular);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return gerentes;
+	
+	
+	}
 
 }

@@ -26,7 +26,7 @@ public class EmpleadoControlador implements Initializable{
 		
 		 
 		combo1.setItems(FXCollections.observableArrayList(Main.modelo.getGestor().obtenerGerentes()));
-		
+		combo2.setItems(FXCollections.observableArrayList(Main.modelo.getGestor().obtenerDepartamentos()));
 	}
     @FXML
     void btnAtrasEmpleado(ActionEvent event) {
