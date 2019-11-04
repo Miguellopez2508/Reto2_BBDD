@@ -21,6 +21,7 @@ public class EmpleadoControlador implements Initializable{
 	public ComboBox<String> combo1, combo2;
 	public CheckBox check1;
 	public GestorBBDD gestorbd = new GestorBBDD();
+
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

@@ -6,10 +6,11 @@ import java.util.ArrayList;
 
 import Conexion.ModificarBD;
 
+
 public class GestorBBDD {
 	
 	ModificarBD modificar = new ModificarBD();
-	
+
 	
 	public ArrayList<String> obtenerGerentes()
 	{

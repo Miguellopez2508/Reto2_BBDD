@@ -7,8 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import Modelo.Departamento;
 import Modelo.Empleado;
-
-
+import Modelo.Modelo;
 
 
 public class ModificarBD {
@@ -84,7 +83,7 @@ public class ModificarBD {
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
 		
-		String query = "select Nombre, Apellido, ID from empleados where EsJefe= 1";
+		String query = "select Nombre, Apellido, ID from empleados where EsJefe = 1";
 		
 		try {
 			stmt = conn.prepareStatement(query);

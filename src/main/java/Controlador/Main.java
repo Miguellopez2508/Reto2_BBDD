@@ -1,9 +1,7 @@
 package Controlador;
 
 import javafx.stage.Stage;
-
 import Conexion.Textos;
-import Modelo.Empleado;
 import Modelo.Modelo;
 import javafx.application.Application;
 
@@ -48,6 +46,7 @@ public class Main extends Application {
         modelo = new Modelo();
         controlador = new Controlador(stage);
         textos = new Textos(modelo);
+        
     
     }
     
