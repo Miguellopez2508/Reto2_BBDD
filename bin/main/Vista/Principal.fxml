@@ -3,10 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.PrincipalControlador">
    <children>
       <Button layoutX="317.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnAnadirEmpleado" prefHeight="143.0" prefWidth="189.0" text="AÑADIR EMPLEADO" />
-      <Button layoutX="55.0" layoutY="129.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="189.0" text="AÑADIR DEPARTAMENTO" />
+      <Button layoutX="55.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnAnadirDepartamento" prefHeight="143.0" prefWidth="189.0" text="AÑADIR DEPARTAMENTO" />
    </children>
 </AnchorPane>

@@ -1,11 +1,9 @@
 package Controlador;
 
 import java.io.IOException;
-
 import com.jfoenix.controls.JFXDecorator;
 import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXSnackbar.SnackbarEvent;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

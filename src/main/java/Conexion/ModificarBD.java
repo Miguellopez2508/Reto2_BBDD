@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import Modelo.Departamento;
 import Modelo.Empleado;
-import Modelo.Modelo;
 
 
 public class ModificarBD {

@@ -81,7 +81,7 @@ public class EmpleadoControlador implements Initializable{
           	Main.modelo.getModificar().insertarEmpleados(Main.modelo.getEmpleados().get(0));
     	}
     	
-    	
+
     	
     }
 
