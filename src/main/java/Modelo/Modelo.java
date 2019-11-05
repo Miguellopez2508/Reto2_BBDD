@@ -10,6 +10,7 @@ public class Modelo {
 	private ArrayList<Departamento> departamentos;
 	private ModificarBD modificar;
 	private GestorBBDD gestor;
+	private GestorValidaciones gestorV;
 	public boolean primeraVez;
 	
 	public Modelo() {
@@ -18,6 +19,7 @@ public class Modelo {
 		this.departamentos =  new ArrayList<Departamento>();
 		this.modificar = new ModificarBD();
 		this.gestor = new GestorBBDD(this.modificar);
+		this.gestorV = new GestorValidaciones();
 		this.primeraVez = false;
 		
 	}
@@ -52,6 +54,14 @@ public class Modelo {
 
 	public void setDepartamentos(ArrayList<Departamento> departamentos) {
 		this.departamentos = departamentos;
+	}
+
+	public GestorValidaciones getGestorV() {
+		return gestorV;
+	}
+
+	public void setGestorV(GestorValidaciones gestorV) {
+		this.gestorV = gestorV;
 	}
 
 }

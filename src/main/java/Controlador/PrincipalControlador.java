@@ -9,7 +9,7 @@ import javafx.fxml.Initializable;
 
 public class PrincipalControlador implements Initializable{
 	
-	private Main main;
+	
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

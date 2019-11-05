@@ -3,16 +3,21 @@ package Controlador;
 import java.io.IOException;
 
 import com.jfoenix.controls.JFXDecorator;
+import com.jfoenix.controls.JFXSnackbar;
+import com.jfoenix.controls.JFXSnackbar.SnackbarEvent;
 
-import Modelo.Modelo;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Controlador {
 	
 	public Stage stage;
+	private JFXSnackbar snackbar;
  
 	public Controlador(Stage stage) {
 		this.stage = stage;
@@ -55,6 +60,19 @@ public class Controlador {
 			e.printStackTrace();
 		}
 		return FXML;
+	}
+	
+	/**
+     * 
+     * @param anchorpane
+     * @param mensaje
+     */
+    public void mostrarMensaje(AnchorPane anchorpane, String mensaje) {
+		Text nodo = new Text(mensaje);
+		nodo.setFill(Color.WHITE);
+		snackbar = new JFXSnackbar(anchorpane);
+		snackbar.enqueue(new SnackbarEvent(nodo));
+		snackbar.getStylesheets().setAll("reto2.css");
 	}
 	
 }
