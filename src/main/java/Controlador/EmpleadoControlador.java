@@ -42,10 +42,6 @@ public class EmpleadoControlador implements Initializable{
 
     	ingresarEmpleado();
     	
-    	Main.controlador.mostrarMensaje(panel, "Se ha añadido correctamente el empleado.");
-    	
-    	
-    	System.out.println(Main.modelo.getEmpleados().toString());
     }
     
     
@@ -61,15 +57,13 @@ public class EmpleadoControlador implements Initializable{
           	
           	String gerente = combo1.getSelectionModel().getSelectedItem();
           	String deptco = combo2.getSelectionModel().getSelectedItem();
-        
           	String[] parts1 = gerente.split("-");
           	String[] parts2 = deptco.split("-");
-     
+          	
           	empleado.setNombre(nombre);
           	empleado.setApellido(apellido);
           	empleado.setResponsabilidad(responsabilidad);
           	empleado.setSalario(salario);
-          	
           	empleado.setDeptco(Integer.parseInt(parts2[1]));     	
           	empleado.setGerente(Integer.parseInt(parts1[1]));
           	
@@ -80,13 +74,21 @@ public class EmpleadoControlador implements Initializable{
           	}
           	
           	Main.modelo.getEmpleados().add(empleado);
-          	
           	Main.modelo.getModificar().insertarEmpleados(Main.modelo.getEmpleados().get(0));
-    	}
-    	
-
-    	
+          	
+          	Main.controlador.mostrarMensaje(panel, "Se ha añadido correctamente el empleado.");
+            limpiar();
+    	} 
     }
+    
+    public void limpiar() {
+    	tf1.clear();
+    	tf2.clear();
+    	tf3.clear();
+    	tf4.clear();
+    	check1.setSelected(false);
+    }
+	
 
 
 }
