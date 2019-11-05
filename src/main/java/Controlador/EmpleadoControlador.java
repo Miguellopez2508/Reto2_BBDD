@@ -41,7 +41,10 @@ public class EmpleadoControlador implements Initializable{
     void btnAnadirEmpleado(ActionEvent event) {
 
     	ingresarEmpleado();
-    
+    	
+    	Main.controlador.mostrarMensaje(panel, "Se ha añadido correctamente el empleado.");
+    	
+    	
     	System.out.println(Main.modelo.getEmpleados().toString());
     }
     

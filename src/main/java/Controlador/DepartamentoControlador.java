@@ -31,8 +31,7 @@ public class DepartamentoControlador implements Initializable{
     void btnAnadirDepartamento(ActionEvent event) {
 
     	ingresarDepartamento();
-
-    	System.out.println(Main.modelo.getDepartamentos().toString());
+    	
     }
     
     public void ingresarDepartamento() {
@@ -49,6 +48,11 @@ public class DepartamentoControlador implements Initializable{
     	    	
     		Main.modelo.getDepartamentos().add(departamento);  	
     		Main.modelo.getModificar().insertarDepartamentos(Main.modelo.getDepartamentos().get(0));
+    		
+    		Main.controlador.mostrarMensaje(panel, "Se ha añadido correctamente el empleado.");
+        	tf1.clear();
+        	tf2.clear();
+
     	}
     
     }
