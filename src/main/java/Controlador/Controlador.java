@@ -1,10 +1,7 @@
 package Controlador;
 
 import java.io.IOException;
-
 import com.jfoenix.controls.JFXDecorator;
-
-import Modelo.Modelo;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

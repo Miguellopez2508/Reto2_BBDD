@@ -73,8 +73,7 @@ public class EmpleadoControlador implements Initializable{
       		empleado.setEsjefe(false);
       	}
       	
-      	Main.modelo.getEmpleados().add(empleado);
-      	
+      	Main.modelo.getEmpleados().add(empleado);  	
       	Main.modelo.getModificar().insertarEmpleados(Main.modelo.getEmpleados().get(0));
     	
     }

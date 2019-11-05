@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 
 public class PrincipalControlador implements Initializable{
 	
-	private Main main;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -22,5 +21,13 @@ public class PrincipalControlador implements Initializable{
     	Main.controlador.CambiarScene("Empleados.fxml");
 
     }
+    
+    @FXML
+    void btnAnadirDepartamento(ActionEvent event) {
+    	
+    	Main.controlador.CambiarScene("Departamentos.fxml");
+
+    }
+
 
 }

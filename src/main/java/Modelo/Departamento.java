@@ -30,6 +30,19 @@ public class Departamento {
 		this.ubicacion = ubicacion;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		
+		builder.append("\n");
+		builder.append("Nombre: ");
+		builder.append(nombre);
+		builder.append("\n");
+		builder.append("Ubicacion: ");
+		builder.append(ubicacion);
+		builder.append("\n");
+		
+		return builder.toString();
 	
-	
+	}
 }
