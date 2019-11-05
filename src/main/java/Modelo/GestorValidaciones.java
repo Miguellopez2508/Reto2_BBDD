@@ -13,6 +13,7 @@ public class GestorValidaciones {
 	public boolean validarEmpleado(EmpleadoControlador panelEmple) {
 		String pattern = "[0-9]+";
 		
+		
 		if(panelEmple.tf1.getText().isEmpty()) {
 			Main.controlador.mostrarMensaje(panelEmple.panel, "Campo 'Nombre' vacío.");
 			return false;

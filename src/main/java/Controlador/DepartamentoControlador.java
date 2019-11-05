@@ -49,7 +49,7 @@ public class DepartamentoControlador implements Initializable{
     		Main.modelo.getDepartamentos().add(departamento);  	
     		Main.modelo.getModificar().insertarDepartamentos(Main.modelo.getDepartamentos().get(0));
     		
-    		Main.controlador.mostrarMensaje(panel, "Se ha añadido correctamente el empleado.");
+    		Main.controlador.mostrarMensaje(panel, "Se ha añadido correctamente el departamento.");
         	tf1.clear();
         	tf2.clear();
 
