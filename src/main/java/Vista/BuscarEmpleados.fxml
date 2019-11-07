@@ -9,14 +9,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.BuscarEmpleadosControlador">
    <children>
-      <TextArea layoutX="84.0" layoutY="109.0" prefHeight="227.0" prefWidth="392.0" />
+      <TextArea fx:id="textArea" layoutX="106.0" layoutY="109.0" prefHeight="227.0" prefWidth="353.0" />
       <Label alignment="TOP_CENTER" layoutX="3.0" layoutY="21.0" prefHeight="35.0" prefWidth="554.0" text="BUSCAR EMPLEADO" textFill="#fa0707">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <Button layoutX="409.0" layoutY="74.0" mnemonicParsing="false" onAction="#btnBuscarBuscarEmpleados" prefHeight="25.0" prefWidth="97.0" text="Buscar" />
       <Button layoutX="225.0" layoutY="347.0" mnemonicParsing="false" onAction="#btnVolverBuscarEmpleados" prefHeight="25.0" prefWidth="97.0" text="Volver" />
-      <JFXTextField layoutX="341.0" layoutY="74.0" promptText="Apellido" />
-      <JFXTextField layoutX="90.0" layoutY="74.0" promptText="Nombre" />
+      <JFXTextField fx:id="apellido" layoutX="255.0" layoutY="74.0" promptText="Apellido" />
+      <JFXTextField fx:id="nombre" layoutX="90.0" layoutY="74.0" promptText="Nombre" />
+      <Button layoutX="54.0" layoutY="200.0" mnemonicParsing="false"  onAction="#btnAtrasBuscarEmpleados"  prefHeight="25.0" prefWidth="36.0" text="&lt;" />
+      <Button layoutX="14.0" layoutY="200.0" mnemonicParsing="false"  onAction="#btnPrimeroBuscarEmpleados" prefHeight="25.0" prefWidth="36.0" text="&lt;&lt;" />
+      <Button layoutX="510.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnUltimoBuscarEmpleados" prefHeight="25.0" prefWidth="36.0" text="&gt;&gt;" />
+      <Button layoutX="470.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnSiguienteBuscarEmpleados" prefHeight="25.0" prefWidth="36.0" text="&gt;" />
    </children>
 </AnchorPane>

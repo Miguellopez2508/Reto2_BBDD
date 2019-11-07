@@ -5,8 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import Modelo.Departamento;
 import Modelo.Empleado;
+
 
 
 public class ModificarBD {
@@ -113,5 +115,58 @@ public class ModificarBD {
 		return result;
 	}
 	
+	public ResultSet buscarEmpleado(String nombre, String apellido) {
+		
+		PreparedStatement stmt = null;
+		ResultSet result = null;	
+		
+		String query = "select * from empleados where Nombre ='" + nombre + "' and Apellido ='" + apellido +"'";
+		
+		try {
+			stmt = conn.prepareStatement(query);
+			result = stmt.executeQuery();
+		}catch (SQLException e1){
+			e1.printStackTrace();
+		}
+		
+		return result;
+	}
 	
+	public ResultSet buscarDepartamento(String nombre) {
+		
+		PreparedStatement stmt = null;
+		ResultSet result = null;	
+		
+		String query = "select * from departamento where Nombre ='" + nombre + "'";
+		
+		try {
+			stmt = conn.prepareStatement(query);
+			result = stmt.executeQuery();
+		}catch (SQLException e1){
+			e1.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	public ResultSet verTodosLosEmpleados() {
+		
+		PreparedStatement stmt = null;
+		ResultSet result = null;	
+		
+		String query = "select * from empleados";
+		
+		
+		try {
+			stmt = conn.prepareStatement(query);
+			result = stmt.executeQuery();
+		}catch (SQLException e1){
+			e1.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+
+
 }

@@ -40,6 +40,7 @@ public class Main extends Application {
 	
     /**
      *  Inicia el modelo y el controlador
+     *  
      */
     public static void iniciarPrograma() {
         modelo = new Modelo();

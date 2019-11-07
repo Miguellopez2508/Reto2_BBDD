@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 import Controlador.DepartamentoControlador;
 import Controlador.EmpleadoControlador;
 import Controlador.Main;
-
 public class GestorValidaciones {
 
 	Pattern letras = Pattern.compile("[a-z].*");

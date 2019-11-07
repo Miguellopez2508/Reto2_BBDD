@@ -7,7 +7,7 @@
    <children>
       <Button layoutX="319.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnAnadirEmpleado" prefHeight="80.0" prefWidth="189.0" text="AÑADIR EMPLEADO" />
       <Button layoutX="62.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnAnadirDepartamento" prefHeight="80.0" prefWidth="189.0" text="AÑADIR DEPARTAMENTO" />
-      <Button layoutX="62.0" layoutY="71.0" mnemonicParsing="false"  prefHeight="80.0" prefWidth="189.0" text="BUSCAR DEPARTAMENTOS" />
+      <Button layoutX="62.0" layoutY="71.0" mnemonicParsing="false" onAction="#btnBuscarDepartamentos" prefHeight="80.0" prefWidth="189.0" text="BUSCAR DEPARTAMENTOS" />
       <Button layoutX="319.0" layoutY="71.0" mnemonicParsing="false" onAction="#btnBuscarEmpleados" prefHeight="80.0" prefWidth="189.0" text="BUSCAR EMPLEADOS" />
    </children>
 </AnchorPane>

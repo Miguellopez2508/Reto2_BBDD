@@ -31,7 +31,7 @@ public class GestorBBDD {
 				gerentes.add(acumular);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -64,5 +64,117 @@ public class GestorBBDD {
 	
 	
 	}
+	
+	public String obtenerEmpleados(String nombre, String apellido)
+	{
+		ResultSet result = modificar.buscarEmpleado(nombre, apellido);	
+		String acumular = "";
+		try {
+			while(result.next()) {
+				String nombre1 = result.getString("Nombre");
+				String apellido1 = result.getString("Apellido");
+				String responsabilidad = result.getString("Responsabilidad");
+				int salario = result.getInt("Salario");
+				int ID = result.getInt("ID");
+				int gerente = result.getInt("Gerente");
+				int deptco = result.getInt("DeptCo");
+				int esjefe = result.getInt("EsJefe");
+				
+				acumular = 	"ID: " + ID + "\n" +
+							"Nombre: " + nombre1 + "\n" +
+							"Apellido: " + apellido1 + "\n" +
+							"Salario: " + salario + "\n" +
+							"Responsabilidad: " + responsabilidad + "\n" + 
+							"Gerente: " + gerente + "\n" +
+							"DeptCo: " + deptco + "\n" +
+							"EsJefe: " + esjefe;			
 
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if (acumular == "") {
+			acumular= "Empleado no encontrado";
+		}
+			
+		
+		return acumular;
+	
+	
+	}
+	
+	public String obtenerDepartamentos(String nombre)
+	{
+		ResultSet result = modificar.buscarDepartamento(nombre);
+		String acumular = "";
+		try {
+			while(result.next()) {
+				String nombre1 = result.getString("Nombre");
+				String ubicacion = result.getString("Ubicación");
+
+				
+				acumular = 	"Nombre: " + nombre1 + "\n" +
+							"Ubicacion: " + ubicacion;			
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if (acumular == "") {
+			acumular= "Departamento no encontrado";
+		}
+			
+		
+		return acumular;
+	
+	
+	}
+
+	
+	public ArrayList<String> obtenerTodosLosEmpleados()
+	{
+		ResultSet result = modificar.verTodosLosEmpleados();
+		String acumular="";
+		ArrayList<String> empleados = new ArrayList<String>();
+		
+		try {
+			while(result.next()) {
+				
+				int ID = result.getInt("ID");
+				int salario = result.getInt("Salario");
+				String nombre1 = result.getString("Nombre");
+				String apellido1 = result.getString("Apellido");
+				String responsabilidad = result.getString("Responsabilidad");			
+				int gerente = result.getInt("Gerente");
+				int deptco = result.getInt("DeptCo");
+				int esjefe = result.getInt("EsJefe");
+				
+				acumular = 	"ID: " + ID + "\n" +
+						"Nombre: " + nombre1 + "\n" +
+						"Apellido: " + apellido1 + "\n" +
+						"Salario: " + salario + "\n" +
+						"Responsabilidad: " + responsabilidad + "\n" + 
+						"Gerente: " + gerente + "\n" +
+						"DeptCo: " + deptco + "\n" +
+						"EsJefe: " + esjefe;	
+				
+				empleados.add(acumular);
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+		return empleados;
+	
+	
+	}
+	
+	
 }

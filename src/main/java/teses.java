@@ -10,17 +10,17 @@ import Conexion.Textos;
 public class teses {
 
 	
-	Textos text = new Textos();
+//	Textos text = new Textos();
 	ModificarBD modi = new ModificarBD();
 	
 	@Test
 	public void test() {
-		String loc = "C:\\workspace\\Reto2_BBDD\\textos\\departamentos.csv";
-		String datos[] = text.cogerDatosCsV(loc);
-		
-		for (int i = 0; i < datos.length; i = i + 2) {
-			System.out.println(modi.insertarDepartamentos(datos, i));
-		}
+//		String loc = "C:\\workspace\\Reto2_BBDD\\textos\\departamentos.csv";
+//		String datos[] = text.cogerDatosCsV(loc);
+//		
+//		for (int i = 0; i < datos.length; i = i + 2) {
+//			System.out.println(modi.insertarDepartamentos(datos, i));
+//		}
 	}
 	
 	

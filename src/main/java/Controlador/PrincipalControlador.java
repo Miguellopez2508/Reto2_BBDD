@@ -34,6 +34,13 @@ public class PrincipalControlador implements Initializable{
     	Main.controlador.CambiarScene("BuscarEmpleados.fxml");
 
     }
+    
+    @FXML
+    void btnBuscarDepartamentos(ActionEvent event) {
+    	
+    	Main.controlador.CambiarScene("BuscarDepartamentos.fxml");
+
+    }
 
 
 
