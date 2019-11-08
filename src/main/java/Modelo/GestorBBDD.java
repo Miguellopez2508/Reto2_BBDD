@@ -176,5 +176,36 @@ public class GestorBBDD {
 	
 	}
 	
+	public ArrayList<String> obtenerTodosLosDepartamentos()
+	{
+		ResultSet result = modificar.verTodosLosDepartamentos();
+		String acumular="";
+		ArrayList<String> departamentos = new ArrayList<String>();
+		
+		try {
+			while(result.next()) {
+				
+				String nombre = result.getString("Nombre");
+				String ubicacion = result.getString("Ubicación");
+		
+				
+				acumular = 	"Nombre: " + nombre + "\n" +
+							"Ubicacion: " + ubicacion;
+								
+				
+				departamentos.add(acumular);
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+		return departamentos;
+	
+	
+	}
+	
 	
 }

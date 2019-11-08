@@ -39,7 +39,7 @@ public class BuscarEmpleadosControlador implements Initializable{
     void btnSiguienteBuscarEmpleados(ActionEvent event) {
 
 		
-		if (contador != empleados.size()){
+		if (contador < empleados.size()){
 			
 			textArea.setText(empleados.get(contador));
 			contador = contador + 1;			
@@ -54,23 +54,15 @@ public class BuscarEmpleadosControlador implements Initializable{
 	
 
 		if (contador == empleados.size()){
-	
+			
 			contador = contador - 1;	
-			System.out.println(contador);
 			textArea.setText(empleados.get(contador));
-		
-		} else if (contador == 0){
 			
-			textArea.setText(empleados.get(0));
-	
-		} 
+		}else if (0 < contador) {
 			
-		else if (contador != -1){
-			
-			contador = contador - 1;
-			textArea.setText(empleados.get(contador));	
-			
-		} 
+			contador = contador - 1;	
+			textArea.setText(empleados.get(contador));
+		}
 	
     }
 	
