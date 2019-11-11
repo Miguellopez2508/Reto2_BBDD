@@ -10,10 +10,10 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.BuscarDepartamentosControlador">
    <children>
      <TextArea fx:id="textArea" layoutX="96.0" layoutY="109.0" prefHeight="216.0" prefWidth="366.0" />
-      <Button layoutX="379.0" layoutY="74.0" mnemonicParsing="false" onAction="#btnBuscarBuscarDepartamentos" prefHeight="25.0" prefWidth="97.0" text="Buscar" />
-      <Button layoutX="225.0" layoutY="347.0" mnemonicParsing="false" onAction="#btnVolverBuscarDepartamentos" prefHeight="25.0" prefWidth="97.0" text="Volver" />
+      <Button layoutX="268.0" layoutY="74.0" mnemonicParsing="false" onAction="#btnBuscarBuscarDepartamentos" prefHeight="25.0" prefWidth="97.0" text="Buscar" />
+      <Button layoutX="96.0" layoutY="341.0" mnemonicParsing="false" onAction="#btnVolverBuscarDepartamentos" prefHeight="25.0" prefWidth="97.0" text="Volver" />
       <Button layoutX="468.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnSiguienteBuscarDepartamentos" prefHeight="25.0" prefWidth="36.0" text="&gt;" />
-      <JFXTextField fx:id="nombre" layoutX="90.0" layoutY="74.0" promptText="Nombre" />
+      <JFXTextField fx:id="nombre" layoutX="96.0" layoutY="74.0" promptText="Nombre" />
       <Label alignment="TOP_CENTER" layoutX="3.0" layoutY="21.0" prefHeight="35.0" prefWidth="553.0" text="BUSCAR DEPARTAMENTO" textFill="#fa0707">
          <font>
             <Font name="System Bold" size="24.0" />
@@ -21,5 +21,6 @@
       <Button layoutX="54.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnAtrasBuscarDepartamentos" prefHeight="25.0" prefWidth="36.0" text="&lt;" />
       <Button layoutX="14.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnPrimeroBuscarDepartamentos" prefHeight="25.0" prefWidth="36.0" text="&lt;&lt;" />
       <Button layoutX="510.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnUltimoBuscarDepartamentos" prefHeight="25.0" prefWidth="36.0" text="&gt;&gt;" />
+      <Button layoutX="365.0" layoutY="341.0" mnemonicParsing="false" onAction="#btnLimpiarBuscarDepartamentos" prefHeight="25.0" prefWidth="97.0" text="Limpiar" />
 </children>
 </AnchorPane>

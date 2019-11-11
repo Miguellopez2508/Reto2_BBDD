@@ -84,6 +84,16 @@ public class BuscarDepartamentosControlador implements Initializable{
 
     }
 	
+	@FXML
+    void btnLimpiarBuscarDepartamentos(ActionEvent event) {
+		
+		contador = 1;
+		nombre.clear();
+		textArea.setText(departamentos.get(0));
+
+
+
+    }
 	
 	
 }

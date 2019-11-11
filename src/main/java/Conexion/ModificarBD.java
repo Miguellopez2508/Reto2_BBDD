@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import Modelo.Departamento;
 import Modelo.Empleado;
 
@@ -184,6 +183,24 @@ public class ModificarBD {
 		
 		return result;
 	}
+	
+	public ResultSet buscarEmpleadosPorID(int ID) {
+		
+		PreparedStatement stmt = null;
+		ResultSet result = null;	
+		
+		String query = "select * from empleados where ID =" + ID ;
+		
+		try {
+			stmt = conn.prepareStatement(query);
+			result = stmt.executeQuery();
+		}catch (SQLException e1){
+			e1.printStackTrace();
+		}
+		
+		return result;
+	}
+	
 
 
 }

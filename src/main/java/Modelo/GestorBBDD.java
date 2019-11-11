@@ -80,14 +80,14 @@ public class GestorBBDD {
 				int deptco = result.getInt("DeptCo");
 				int esjefe = result.getInt("EsJefe");
 				
-				acumular = 	"ID: " + ID + "\n" +
+				acumular += "ID: " + ID + "\n" +
 							"Nombre: " + nombre1 + "\n" +
 							"Apellido: " + apellido1 + "\n" +
 							"Salario: " + salario + "\n" +
 							"Responsabilidad: " + responsabilidad + "\n" + 
 							"Gerente: " + gerente + "\n" +
 							"DeptCo: " + deptco + "\n" +
-							"EsJefe: " + esjefe;			
+							"EsJefe: " + esjefe + "\n" + "\n";			
 
 			}
 		} catch (SQLException e) {
@@ -115,8 +115,8 @@ public class GestorBBDD {
 				String ubicacion = result.getString("Ubicación");
 
 				
-				acumular = 	"Nombre: " + nombre1 + "\n" +
-							"Ubicacion: " + ubicacion;			
+				acumular += "Nombre: " + nombre1 + "\n" +
+							"Ubicacion: " + ubicacion + "\n" + "\n";			
 
 			}
 		} catch (SQLException e) {
@@ -131,6 +131,45 @@ public class GestorBBDD {
 		
 		return acumular;
 	
+	
+	}
+	
+	public String obtenerEmpleadosPorID(int ID)
+	{
+		ResultSet result = modificar.buscarEmpleadosPorID(ID);	
+		String acumular = "";
+		try {
+			while(result.next()) {
+				String nombre1 = result.getString("Nombre");
+				String apellido1 = result.getString("Apellido");
+				String responsabilidad = result.getString("Responsabilidad");
+				int salario = result.getInt("Salario");
+				int ID1 = result.getInt("ID");
+				int gerente = result.getInt("Gerente");
+				int deptco = result.getInt("DeptCo");
+				int esjefe = result.getInt("EsJefe");
+				
+				acumular += "ID: " + ID1 + "\n" +
+							"Nombre: " + nombre1 + "\n" +
+							"Apellido: " + apellido1 + "\n" +
+							"Salario: " + salario + "\n" +
+							"Responsabilidad: " + responsabilidad + "\n" + 
+							"Gerente: " + gerente + "\n" +
+							"DeptCo: " + deptco + "\n" +
+							"EsJefe: " + esjefe + "\n" + "\n";			
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if (acumular == "") {
+			acumular= "Empleado no encontrado";
+		}
+			
+		
+		return acumular;
 	
 	}
 

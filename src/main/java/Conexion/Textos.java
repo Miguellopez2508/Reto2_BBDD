@@ -82,6 +82,7 @@ public class Textos {
 					
 			NodeList nList = doc.getElementsByTagName(doc.getDocumentElement().getNodeName());
 			
+			NodeList nList2 = doc.getElementsByTagName("empleado");
 			 
 			for (int temp = 0; temp < nList.getLength(); temp++) {
  
@@ -92,7 +93,7 @@ public class Textos {
 					Element eElement = (Element) nNode;
 					
 							
-					for (int i =0; i < 3 ; i++){
+					for (int i =0; i < nList2.getLength() ; i++){
 						
 						Empleado empleado = new Empleado();
 						

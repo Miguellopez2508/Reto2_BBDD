@@ -16,6 +16,7 @@ public class BuscarEmpleadosControlador implements Initializable{
 	public TextArea textArea;
 	public JFXTextField nombre;
 	public JFXTextField apellido;
+	public JFXTextField ID;
 	ArrayList<String> empleados = Main.modelo.getGestor().obtenerTodosLosEmpleados();
 	int contador = 1;
 	
@@ -67,9 +68,16 @@ public class BuscarEmpleadosControlador implements Initializable{
     }
 	
 	@FXML
-    void btnBuscarBuscarEmpleados(ActionEvent event) {
+    void btnBuscarNombreBuscarEmpleados(ActionEvent event) {
     	
     	textArea.setText(Main.modelo.getGestor().obtenerEmpleados(nombre.getText(), apellido.getText()));
+
+    }
+	
+	@FXML
+    void btnBuscarIDBuscarEmpleados(ActionEvent event) {
+    	
+    	textArea.setText(Main.modelo.getGestor().obtenerEmpleadosPorID(Integer.parseInt(ID.getText())));
 
     }
 	
@@ -85,6 +93,17 @@ public class BuscarEmpleadosControlador implements Initializable{
 	    	
 			textArea.setText(empleados.get(0));
 			contador = 0;
+	}
+	
+	@FXML
+	void btnLimpiarBuscarEmpleados(ActionEvent event) {
+	    	
+		contador = 1;
+		nombre.clear();
+		apellido.clear();
+		ID.clear();
+		textArea.setText(empleados.get(0));
+
 	}
 
 }
