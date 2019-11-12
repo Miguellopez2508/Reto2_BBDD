@@ -9,5 +9,6 @@
       <Button layoutX="62.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnAnadirDepartamento" prefHeight="80.0" prefWidth="189.0" text="AÑADIR DEPARTAMENTO" />
       <Button layoutX="62.0" layoutY="71.0" mnemonicParsing="false" onAction="#btnBuscarDepartamentos" prefHeight="80.0" prefWidth="189.0" text="BUSCAR DEPARTAMENTOS" />
       <Button layoutX="319.0" layoutY="71.0" mnemonicParsing="false" onAction="#btnBuscarEmpleados" prefHeight="80.0" prefWidth="189.0" text="BUSCAR EMPLEADOS" />
+      <Button layoutX="214.0" layoutY="335.0" mnemonicParsing="false" onAction="#btnImprimir" prefHeight="36.0" prefWidth="133.0" text="Imprimir" />
    </children>
 </AnchorPane>

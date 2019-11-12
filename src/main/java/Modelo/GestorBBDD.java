@@ -240,10 +240,65 @@ public class GestorBBDD {
 			e.printStackTrace();
 		}
 
-		
 		return departamentos;
+	}
 	
+	public String obtenerTodosLosEmpleadosEnString()
+	{
+		ResultSet result = modificar.verTodosLosEmpleados();
+		String acumular="";
+		
+		try {
+			while(result.next()) {
+				
+				int ID = result.getInt("ID");
+				int salario = result.getInt("Salario");
+				String nombre1 = result.getString("Nombre");
+				String apellido1 = result.getString("Apellido");
+				String responsabilidad = result.getString("Responsabilidad");			
+				int gerente = result.getInt("Gerente");
+				int deptco = result.getInt("DeptCo");
+				int esjefe = result.getInt("EsJefe");
+				
+				acumular += 	"ID: " + ID + "\r\n" +
+						"Nombre: " + nombre1 + "\r\n" +
+						"Apellido: " + apellido1 + "\r\n" +
+						"Salario: " + salario + "\r\n" +
+						"Responsabilidad: " + responsabilidad + "\r\n" + 
+						"Gerente: " + gerente + "\r\n" +
+						"DeptCo: " + deptco + "\r\n" +
+						"EsJefe: " + esjefe + "\r\n" + "------------" + "\r\n";	
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return acumular;
+	}
 	
+	public String obtenerTodosLosDepartamentosString()
+	{
+		ResultSet result = modificar.verTodosLosDepartamentos();
+		String acumular="";
+		
+		try {
+			while(result.next()) {
+				
+				int id = result.getInt("DeptCo");
+				String nombre = result.getString("Nombre");
+				String ubicacion = result.getString("Ubicación");
+		
+				acumular += "Código: " + id + "\r\n" +
+						"Nombre: " + nombre + "\r\n" +
+						"Ubicacion: " + ubicacion + "\r\n" + "------------" + "\r\n";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return acumular;
 	}
 	
 	

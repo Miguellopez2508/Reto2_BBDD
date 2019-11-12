@@ -1,0 +1,65 @@
+EMPLEADOS
+------------
+ID: 100
+Nombre: Aitor
+Apellido: Gonzalez
+Salario: 1300
+Responsabilidad: jefe del centro
+Gerente: 0
+DeptCo: 1
+EsJefe: 1
+------------
+ID: 101
+Nombre: Alyson
+Apellido: Blanco
+Salario: 1200
+Responsabilidad: jefe de informatica
+Gerente: 1
+DeptCo: 1
+EsJefe: 1
+------------
+ID: 102
+Nombre: Maitane
+Apellido: Diaz
+Salario: 1100
+Responsabilidad: profesora
+Gerente: 2
+DeptCo: 1
+EsJefe: 0
+------------
+ID: 103
+Nombre: hdfxcdbcb
+Apellido: cbvxcvvx
+Salario: 444
+Responsabilidad: cvxvxcv
+Gerente: 101
+DeptCo: 2
+EsJefe: 1
+------------
+
+DEPARTAMENTOS
+------------
+Código: 1
+Nombre: Elorrieta
+Ubicacion: San Ignacio
+------------
+Código: 2
+Nombre: Errekamari
+Ubicacion: Deusto
+------------
+Código: 3
+Nombre: UPV
+Ubicacion: San Mames
+------------
+Código: 4
+Nombre: bxbc
+Ubicacion: xcbxbbcbx
+------------
+Código: 5
+Nombre: faszvsdv
+Ubicacion: vdsvdsv
+------------
+Código: 6
+Nombre: jnfrgnf
+Ubicacion: ngfnfgn
+------------

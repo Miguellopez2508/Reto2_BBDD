@@ -1,7 +1,12 @@
 package Controlador;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileWriter;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,7 +46,29 @@ public class PrincipalControlador implements Initializable{
     	Main.controlador.CambiarScene("BuscarDepartamentos.fxml");
 
     }
-
-
-
+    
+    @FXML
+    void btnImprimir(ActionEvent event) {
+    	String informe = "";
+		FileWriter fichero = null;
+		
+    	informe = "EMPLEADOS\r\n" + "------------" + "\r\n" + Main.modelo.getGestor().obtenerTodosLosEmpleadosEnString();
+    	informe += "\r\nDEPARTAMENTOS\r\n" + "------------" + "\r\n" + Main.modelo.getGestor().obtenerTodosLosDepartamentosString();
+    	
+    	try {
+			fichero = new FileWriter(System.getProperty("user.dir") + "\\informe.txt",false);
+			fichero.write(informe);
+			fichero.close();
+		} catch (Exception ex) {
+			ex.getStackTrace();
+		}
+    	
+    	
+    	try {
+    		File archivo = new File(System.getProperty("user.dir") + "\\informe.txt");
+    		Desktop.getDesktop().open(archivo);
+    	} catch (Exception ex) {
+    		ex.getStackTrace();
+    	}
+    }
 }
