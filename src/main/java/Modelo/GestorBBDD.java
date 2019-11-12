@@ -243,8 +243,11 @@ public class GestorBBDD {
 		return departamentos;
 	}
 	
-	public String obtenerTodosLosEmpleadosEnString()
-	{
+	/**
+	 * 
+	 * @return
+	 */
+	public String obtenerTodosLosEmpleadosEnString() {
 		ResultSet result = modificar.verTodosLosEmpleados();
 		String acumular="";
 		
@@ -277,8 +280,11 @@ public class GestorBBDD {
 		return acumular;
 	}
 	
-	public String obtenerTodosLosDepartamentosString()
-	{
+	/**
+	 * 
+	 * @return
+	 */
+	public String obtenerTodosLosDepartamentosString() {
 		ResultSet result = modificar.verTodosLosDepartamentos();
 		String acumular="";
 		

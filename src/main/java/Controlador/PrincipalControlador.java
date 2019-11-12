@@ -4,10 +4,7 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.FileWriter;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Scanner;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
