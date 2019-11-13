@@ -30,12 +30,13 @@ public class Main extends Application {
         Main.stage = stage;
         
         iniciarPrograma();
+       
+        modelo.setPrimeraVezDesdeBDD();
         
         if (modelo.primeraVez) {
+        	modelo.getModificar().crearPrimeraVez();
         	cargarBasesDeDatos();
         }
-        
-      
     }
 	
     /**
@@ -46,8 +47,6 @@ public class Main extends Application {
         modelo = new Modelo();
         controlador = new Controlador(stage);
         textos = new Textos(modelo);
-        
-    
     }
     
     /**
@@ -68,7 +67,5 @@ public class Main extends Application {
     	 for (int i = 0; i < modelo.getEmpleados().size(); i++) {
     		 modelo.getModificar().insertarEmpleados(modelo.getEmpleados().get(i));
     	 }
-    	 
-    	 
     }
 }

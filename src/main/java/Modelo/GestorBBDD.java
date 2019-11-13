@@ -307,5 +307,21 @@ public class GestorBBDD {
 		return acumular;
 	}
 	
+	public boolean primeraVezBoleano() {
+		ResultSet result = modificar.comprobarPrimeraVez();
+		boolean primera=true;
+		
+		try {
+			while(result.next()) {
+				primera = false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return primera;
+	}
+	
 	
 }

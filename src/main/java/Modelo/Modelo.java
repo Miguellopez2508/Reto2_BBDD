@@ -24,6 +24,10 @@ public class Modelo {
 		
 	}
 
+	public void setPrimeraVezDesdeBDD() {
+		this.primeraVez = this.gestor.primeraVezBoleano();
+	}
+
 	public GestorBBDD getGestor() {
 		return gestor;
 	}

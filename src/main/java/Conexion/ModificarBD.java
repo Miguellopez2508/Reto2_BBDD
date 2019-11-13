@@ -201,6 +201,36 @@ public class ModificarBD {
 		return result;
 	}
 	
-
-
+	public ResultSet crearPrimeraVez() {
+		PreparedStatement stmt = null;
+		ResultSet result = null;	
+		
+		String query = "insert into primeraVez(`PrimeraVez`) values (CURRENT_TIMESTAMP(6))";
+		
+		try {
+			stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			stmt.executeUpdate();
+			result = stmt.getGeneratedKeys();
+		}catch (SQLException e1){
+			e1.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	public ResultSet comprobarPrimeraVez() {	
+		PreparedStatement stmt = null;
+		ResultSet result = null;	
+		
+		String query = "select * from primeraVez";
+		
+		try {
+			stmt = conn.prepareStatement(query);
+			result = stmt.executeQuery();
+		}catch (SQLException e1){
+			e1.printStackTrace();
+		}
+		
+		return result;
+	}
 }
