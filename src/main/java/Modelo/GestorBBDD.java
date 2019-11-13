@@ -111,11 +111,13 @@ public class GestorBBDD {
 		String acumular = "";
 		try {
 			while(result.next()) {
+				int id = result.getInt("DeptCo");
 				String nombre1 = result.getString("Nombre");
 				String ubicacion = result.getString("Ubicación");
 
 				
-				acumular += "Nombre: " + nombre1 + "\n" +
+				acumular += "Codigo: " + id + "\n" +
+							"Nombre: " + nombre1 + "\n" +
 							"Ubicacion: " + ubicacion + "\n" + "\n";			
 
 			}
@@ -223,12 +225,13 @@ public class GestorBBDD {
 		
 		try {
 			while(result.next()) {
-				
+				int id = result.getInt("DeptCo");
 				String nombre = result.getString("Nombre");
 				String ubicacion = result.getString("Ubicación");
 		
 				
-				acumular = 	"Nombre: " + nombre + "\n" +
+				acumular = 	"Codigo: " + id + "\n" +
+							"Nombre: " + nombre + "\n" +
 							"Ubicacion: " + ubicacion;
 								
 				

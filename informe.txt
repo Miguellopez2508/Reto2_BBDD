@@ -1,6 +1,6 @@
 EMPLEADOS
 ------------
-ID: 100
+ID: 1
 Nombre: Aitor
 Apellido: Gonzalez
 Salario: 1300
@@ -9,7 +9,7 @@ Gerente: 0
 DeptCo: 1
 EsJefe: 1
 ------------
-ID: 101
+ID: 2
 Nombre: Alyson
 Apellido: Blanco
 Salario: 1200
@@ -18,7 +18,7 @@ Gerente: 1
 DeptCo: 1
 EsJefe: 1
 ------------
-ID: 102
+ID: 3
 Nombre: Maitane
 Apellido: Diaz
 Salario: 1100
@@ -27,14 +27,32 @@ Gerente: 2
 DeptCo: 1
 EsJefe: 0
 ------------
-ID: 103
-Nombre: hdfxcdbcb
-Apellido: cbvxcvvx
-Salario: 444
-Responsabilidad: cvxvxcv
-Gerente: 101
-DeptCo: 2
+ID: 4
+Nombre: Aitor
+Apellido: Gonzalez
+Salario: 1300
+Responsabilidad: jefe del centro
+Gerente: 0
+DeptCo: 1
 EsJefe: 1
+------------
+ID: 5
+Nombre: Alyson
+Apellido: Blanco
+Salario: 1200
+Responsabilidad: jefe de informatica
+Gerente: 1
+DeptCo: 1
+EsJefe: 1
+------------
+ID: 6
+Nombre: Maitane
+Apellido: Diaz
+Salario: 1100
+Responsabilidad: profesora
+Gerente: 2
+DeptCo: 1
+EsJefe: 0
 ------------
 
 DEPARTAMENTOS
@@ -52,14 +70,18 @@ Nombre: UPV
 Ubicacion: San Mames
 ------------
 Código: 4
-Nombre: bxbc
-Ubicacion: xcbxbbcbx
+Nombre: Elorrieta
+Ubicacion: San Ignacio
 ------------
 Código: 5
-Nombre: faszvsdv
-Ubicacion: vdsvdsv
+Nombre: Errekamari
+Ubicacion: Deusto
 ------------
 Código: 6
-Nombre: jnfrgnf
-Ubicacion: ngfnfgn
+Nombre: UPV
+Ubicacion: San Mames
+------------
+Código: 7
+Nombre: eoeoe
+Ubicacion: eoeoe
 ------------

@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import Controlador.Main;
+import Logger.Log;
 import Modelo.Departamento;
 import Modelo.Empleado;
 
@@ -14,6 +17,10 @@ public class ModificarBD {
 	
 	Connection conn = null;
 	ConexionBD pool = null;
+	
+	Log log = Log.getInstance();
+	
+
 
 	public ModificarBD() {
 		pool = new ConexionBD();
@@ -27,8 +34,7 @@ public class ModificarBD {
 		try {
 			conn = pool.getConnection();
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			
+			log.escribirLogger(e.getMessage(), this);
 		}
 	}
 

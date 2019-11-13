@@ -4,6 +4,10 @@ import javafx.stage.Stage;
 import Conexion.Textos;
 import Modelo.Modelo;
 import javafx.application.Application;
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 
 public class Main extends Application {
@@ -34,8 +38,6 @@ public class Main extends Application {
         if (modelo.primeraVez) {
         	cargarBasesDeDatos();
         }
-        
-      
     }
 	
     /**
@@ -46,8 +48,6 @@ public class Main extends Application {
         modelo = new Modelo();
         controlador = new Controlador(stage);
         textos = new Textos(modelo);
-        
-    
     }
     
     /**
@@ -68,7 +68,7 @@ public class Main extends Application {
     	 for (int i = 0; i < modelo.getEmpleados().size(); i++) {
     		 modelo.getModificar().insertarEmpleados(modelo.getEmpleados().get(i));
     	 }
-    	 
-    	 
     }
+    
+
 }
