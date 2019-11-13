@@ -34,8 +34,11 @@ public class Main extends Application {
         Main.stage = stage;
         
         iniciarPrograma();
+       
+        modelo.setPrimeraVezDesdeBDD();
         
         if (modelo.primeraVez) {
+        	modelo.getModificar().crearPrimeraVez();
         	cargarBasesDeDatos();
         }
     }
