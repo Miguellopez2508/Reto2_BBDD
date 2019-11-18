@@ -22,8 +22,7 @@ public class Textos {
 	public Textos (Modelo modelo) {
 		this.modelo = modelo;
 	}
-	
-	
+		
 	/**
 	 * Separa los datos dados en un .txt y los mete en un  array de strings
 	 * @param datosBD El .txt
@@ -66,12 +65,12 @@ public class Textos {
 		return datos;
 	}
 	
-
+	/**
+	 * 
+	 * @param archivoEntrada
+	 */
 	public void leerXml(String archivoEntrada){
-		
-		
 		try {
-
 			File fXmlFile = new File(archivoEntrada);
 			
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -85,13 +84,10 @@ public class Textos {
 			NodeList nList2 = doc.getElementsByTagName("empleado");
 			 
 			for (int temp = 0; temp < nList.getLength(); temp++) {
- 
 				Node nNode = nList.item(temp);
 							 
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-
 					Element eElement = (Element) nNode;
-					
 							
 					for (int i =0; i < nList2.getLength() ; i++){
 						
@@ -113,29 +109,21 @@ public class Textos {
 						empleado.setDeptco(deptco);
 						empleado.setEsjefe(esjefe);					
 						
-						
-						modelo.getEmpleados().add(empleado);
-						
-					}
-			
-					 
+						modelo.getEmpleados().add(empleado);	
+					}	 
 				} 
 			}
-		    } catch (Exception e) {
+	    } catch (Exception e) {
 			e.printStackTrace();
-		    }		
-		
-
-			
-		  }
+	    }		
+	}
 		
 
 	/**
-	 * 
+	 * Coge los datos de un csv, los formatea y los mete en el modelo
 	 * @param datosBD
 	 */
-	public void cogerDatosCsV(String datosBD) {
-		
+	public void cogerDatosCsV(String datosBD) {	
 		FileReader fileReader = null;
 		BufferedReader buffer = null;
 		Departamento departamento;
@@ -146,7 +134,6 @@ public class Textos {
 			
 			String linea = "";
 			
-			
 			while ((linea = buffer.readLine()) != null ) {
 				String[] parts = linea.split(";");
 				
@@ -156,12 +143,9 @@ public class Textos {
 					departamento.setUbicacion(parts[1]);
 					modelo.getDepartamentos().add(departamento);
 				}
-			}
-			
+			}	
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
-	}
-	
+		}	
+	}	
 }

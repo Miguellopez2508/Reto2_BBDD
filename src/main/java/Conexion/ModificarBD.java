@@ -5,23 +5,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import Controlador.Main;
 import Logger.Log;
 import Modelo.Departamento;
 import Modelo.Empleado;
-
-
 
 public class ModificarBD {
 	
 	Connection conn = null;
 	ConexionBD pool = null;
-	
 	Log log = Log.getInstance();
 	
-
-
 	public ModificarBD() {
 		pool = new ConexionBD();
 		conectar();
@@ -37,7 +30,6 @@ public class ModificarBD {
 			log.escribirLogger(e.getMessage(), this);
 		}
 	}
-
 	
 	/**
 	 * 
@@ -60,6 +52,11 @@ public class ModificarBD {
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @param empleados
+	 * @return
+	 */
 	public ResultSet insertarEmpleados(Empleado empleados) {
 		PreparedStatement stmt = null;
 		ResultSet result = null;
@@ -84,8 +81,11 @@ public class ModificarBD {
 		return result;
 	}
 	
-	public ResultSet verGerentes() {
-		
+	/**
+	 * 
+	 * @return
+	 */
+	public ResultSet verGerentes() {	
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
 		
@@ -99,12 +99,13 @@ public class ModificarBD {
 		}
 		
 		return result;
-		
-	
 	}
 	
-	public ResultSet verDepartamentos() {
-		
+	/**
+	 * 
+	 * @return
+	 */
+	public ResultSet verDepartamentos() {	
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
 		
@@ -120,8 +121,13 @@ public class ModificarBD {
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @param nombre
+	 * @param apellido
+	 * @return
+	 */
 	public ResultSet buscarEmpleado(String nombre, String apellido) {
-		
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
 		
@@ -137,8 +143,12 @@ public class ModificarBD {
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @param nombre
+	 * @return
+	 */
 	public ResultSet buscarDepartamento(String nombre) {
-		
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
 		
@@ -154,8 +164,11 @@ public class ModificarBD {
 		return result;
 	}
 	
-	public ResultSet verTodosLosEmpleados() {
-		
+	/**
+	 * 
+	 * @return
+	 */
+	public ResultSet verTodosLosEmpleados() {	
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
 		
@@ -172,8 +185,11 @@ public class ModificarBD {
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public ResultSet verTodosLosDepartamentos() {
-		
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
 		
@@ -190,8 +206,12 @@ public class ModificarBD {
 		return result;
 	}
 	
-	public ResultSet buscarEmpleadosPorID(int ID) {
-		
+	/**
+	 * 
+	 * @param ID
+	 * @return
+	 */
+	public ResultSet buscarEmpleadosPorID(int ID) {	
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
 		
@@ -207,6 +227,10 @@ public class ModificarBD {
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public ResultSet crearPrimeraVez() {
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
@@ -224,6 +248,10 @@ public class ModificarBD {
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public ResultSet comprobarPrimeraVez() {	
 		PreparedStatement stmt = null;
 		ResultSet result = null;	
