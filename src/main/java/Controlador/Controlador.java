@@ -4,6 +4,8 @@ import java.io.IOException;
 import com.jfoenix.controls.JFXDecorator;
 import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXSnackbar.SnackbarEvent;
+
+import Logger.Log;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,6 +19,8 @@ public class Controlador {
 	public Stage stage;
 	private JFXSnackbar snackbar;
  
+	Log log = Log.getInstance();
+	
 	public Controlador(Stage stage) {
 		this.stage = stage;
 		
@@ -55,7 +59,7 @@ public class Controlador {
 		try {
 			FXML = FXMLLoader.load(getClass().getResource("/vista/" + FXMLLink));
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 		return FXML;
 	}

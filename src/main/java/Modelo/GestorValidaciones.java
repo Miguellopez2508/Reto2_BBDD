@@ -1,14 +1,14 @@
 package Modelo;
 
-
-
-
 import Controlador.DepartamentoControlador;
 import Controlador.EmpleadoControlador;
 import Controlador.Main;
+import Logger.Log;
 
 
 public class GestorValidaciones {
+	
+
 	 
 	public boolean validarEmpleado(EmpleadoControlador panelEmple) {
 		String pattern = "\\d*";

@@ -5,11 +5,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Conexion.ModificarBD;
+import Logger.Log;
 
 
 public class GestorBBDD {
 	
 	ModificarBD modificar;
+	
+	Log log = Log.getInstance();
 
 	public GestorBBDD(ModificarBD modificar) {
 		this.modificar = modificar;
@@ -32,7 +35,7 @@ public class GestorBBDD {
 			}
 		} catch (SQLException e) {
 			
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 		
 		
@@ -55,8 +58,7 @@ public class GestorBBDD {
 				gerentes.add(acumular);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 		
 		
@@ -91,8 +93,7 @@ public class GestorBBDD {
 
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 		
 		if (acumular == "") {
@@ -122,8 +123,7 @@ public class GestorBBDD {
 
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 		
 		if (acumular == "") {
@@ -162,8 +162,7 @@ public class GestorBBDD {
 
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 		
 		if (acumular == "") {
@@ -207,8 +206,7 @@ public class GestorBBDD {
 
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 
 		
@@ -239,8 +237,7 @@ public class GestorBBDD {
 
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 
 		return departamentos;
@@ -276,8 +273,7 @@ public class GestorBBDD {
 						"EsJefe: " + esjefe + "\r\n" + "------------" + "\r\n";	
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 
 		return acumular;
@@ -303,8 +299,7 @@ public class GestorBBDD {
 						"Ubicacion: " + ubicacion + "\r\n" + "------------" + "\r\n";
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 
 		return acumular;
@@ -319,8 +314,7 @@ public class GestorBBDD {
 				primera = false;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}
 
 		return primera;

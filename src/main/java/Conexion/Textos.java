@@ -10,6 +10,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import Logger.Log;
 import Modelo.Empleado;
 import Modelo.Departamento;
 import Modelo.Modelo;
@@ -18,6 +20,7 @@ import Modelo.Modelo;
 public class Textos {
 	
 	Modelo modelo;
+	Log log = Log.getInstance();
 	
 	public Textos (Modelo modelo) {
 		this.modelo = modelo;
@@ -52,13 +55,13 @@ public class Textos {
 				}
 			}
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			log.escribirLogger(e.getMessage(), this);
 
 		} finally {
 			try {
 				fileReader.close();
 			} catch (Exception e2) {
-				e2.printStackTrace();
+				log.escribirLogger(e2.getMessage(), this);
 			}
 		}
 		
@@ -114,7 +117,7 @@ public class Textos {
 				} 
 			}
 	    } catch (Exception e) {
-			e.printStackTrace();
+	    	log.escribirLogger(e.getMessage(), this);
 	    }		
 	}
 		
@@ -145,7 +148,7 @@ public class Textos {
 				}
 			}	
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.escribirLogger(e.getMessage(), this);
 		}	
 	}	
 }

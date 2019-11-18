@@ -5,12 +5,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import Logger.Log;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 public class PrincipalControlador implements Initializable{
 
+	Log log = Log.getInstance();
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
@@ -57,7 +61,7 @@ public class PrincipalControlador implements Initializable{
 			fichero.write(informe);
 			fichero.close();
 		} catch (Exception ex) {
-			ex.getStackTrace();
+			log.escribirLogger(ex.getMessage(), this);
 		}
     	
     	
@@ -65,7 +69,7 @@ public class PrincipalControlador implements Initializable{
     		File archivo = new File(System.getProperty("user.dir") + "\\informe.txt");
     		Desktop.getDesktop().open(archivo);
     	} catch (Exception ex) {
-    		ex.getStackTrace();
+    		log.escribirLogger(ex.getMessage(), this);
     	}
     }
 }

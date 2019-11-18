@@ -26,6 +26,7 @@ public class ModificarBD {
 	private void conectar() {
 		try {
 			conn = pool.getConnection();
+			log.escribirLogger("Conexión realizada con éxito", this);
 		} catch (SQLException e) {
 			log.escribirLogger(e.getMessage(), this);
 		}
@@ -46,6 +47,7 @@ public class ModificarBD {
 			stmt.setString(2, departamento.getUbicacion());
 			stmt.executeUpdate();
 			result = stmt.getGeneratedKeys();
+			log.escribirLogger("Se insertó correctamente el departamento con nombre " + departamento.getNombre(), this);
 		} catch (SQLException e1) {
 			log.escribirLogger(e1.getMessage(), this);
 		}
@@ -74,10 +76,12 @@ public class ModificarBD {
 			
 			stmt.executeUpdate();
 			result = stmt.getGeneratedKeys();
+			log.escribirLogger("Se insertó correctamente el empleado con nombre " + empleados.getNombre(), this);
 			
 		} catch (SQLException e1) {
 			log.escribirLogger(e1.getMessage(), this);
 		}
+		
 		return result;
 	}
 	
@@ -95,7 +99,7 @@ public class ModificarBD {
 			stmt = conn.prepareStatement(query);
 			result = stmt.executeQuery();
 		}catch (SQLException e1){
-			
+			log.escribirLogger(e1.getMessage(), this);
 		}
 		
 		return result;
@@ -115,7 +119,7 @@ public class ModificarBD {
 			stmt = conn.prepareStatement(query);
 			result = stmt.executeQuery();
 		}catch (SQLException e1){
-			e1.printStackTrace();
+			log.escribirLogger(e1.getMessage(), this);
 		}
 		
 		return result;
@@ -137,7 +141,7 @@ public class ModificarBD {
 			stmt = conn.prepareStatement(query);
 			result = stmt.executeQuery();
 		}catch (SQLException e1){
-			e1.printStackTrace();
+			log.escribirLogger(e1.getMessage(), this);
 		}
 		
 		return result;
@@ -158,7 +162,7 @@ public class ModificarBD {
 			stmt = conn.prepareStatement(query);
 			result = stmt.executeQuery();
 		}catch (SQLException e1){
-			e1.printStackTrace();
+			log.escribirLogger(e1.getMessage(), this);
 		}
 		
 		return result;
@@ -179,7 +183,7 @@ public class ModificarBD {
 			stmt = conn.prepareStatement(query);
 			result = stmt.executeQuery();
 		}catch (SQLException e1){
-			e1.printStackTrace();
+			log.escribirLogger(e1.getMessage(), this);
 		}
 		
 		return result;
@@ -200,7 +204,7 @@ public class ModificarBD {
 			stmt = conn.prepareStatement(query);
 			result = stmt.executeQuery();
 		}catch (SQLException e1){
-			e1.printStackTrace();
+			log.escribirLogger(e1.getMessage(), this);
 		}
 		
 		return result;
@@ -221,7 +225,7 @@ public class ModificarBD {
 			stmt = conn.prepareStatement(query);
 			result = stmt.executeQuery();
 		}catch (SQLException e1){
-			e1.printStackTrace();
+			log.escribirLogger(e1.getMessage(), this);
 		}
 		
 		return result;
@@ -242,7 +246,7 @@ public class ModificarBD {
 			stmt.executeUpdate();
 			result = stmt.getGeneratedKeys();
 		}catch (SQLException e1){
-			e1.printStackTrace();
+			log.escribirLogger(e1.getMessage(), this);
 		}
 		
 		return result;
@@ -262,7 +266,7 @@ public class ModificarBD {
 			stmt = conn.prepareStatement(query);
 			result = stmt.executeQuery();
 		}catch (SQLException e1){
-			e1.printStackTrace();
+			log.escribirLogger(e1.getMessage(), this);
 		}
 		
 		return result;
