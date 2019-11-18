@@ -1,2 +1,11 @@
 18/11/2019 - 14:07 - class Conexion.ModificarBD - Info: Conexión realizada con éxito
 18/11/2019 - 14:07 - class Controlador.Main - Info: Programa iniciado
+18/11/2019 - 14:16 - class Conexion.ModificarBD - Info: Conexión realizada con éxito
+18/11/2019 - 14:16 - class Controlador.Main - Info: Programa iniciado
+18/11/2019 - 14:16 - class Conexion.ModificarBD - Info: Se insertó correctamente el departamento con nombre Elorrieta
+18/11/2019 - 14:16 - class Conexion.ModificarBD - Info: Se insertó correctamente el departamento con nombre Errekamari
+18/11/2019 - 14:16 - class Conexion.ModificarBD - Info: Se insertó correctamente el departamento con nombre UPV
+18/11/2019 - 14:16 - class Conexion.ModificarBD - Info: Se insertó correctamente el empleado con nombre Aitor
+18/11/2019 - 14:16 - class Conexion.ModificarBD - Info: Se insertó correctamente el empleado con nombre Alyson
+18/11/2019 - 14:16 - class Conexion.ModificarBD - Info: Se insertó correctamente el empleado con nombre Maitane
+18/11/2019 - 14:16 - class Controlador.Main - Info: Cargados los datos por primera vez
