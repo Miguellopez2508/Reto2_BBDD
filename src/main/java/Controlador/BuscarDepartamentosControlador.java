@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 public class BuscarDepartamentosControlador implements Initializable{
@@ -14,6 +15,7 @@ public class BuscarDepartamentosControlador implements Initializable{
 	public TextArea textArea;
 	public JFXTextField nombre;
 	int contador = 1;
+	public Button uno, dos, tres, cuatro;
 	
 	ArrayList<String> departamentos = Main.modelo.getGestor().obtenerTodosLosDepartamentos();
 	
@@ -25,6 +27,10 @@ public class BuscarDepartamentosControlador implements Initializable{
 	@FXML
     void btnBuscarBuscarDepartamentos(ActionEvent event) {	
 		textArea.setText(Main.modelo.getGestor().obtenerDepartamentos(nombre.getText()));
+		uno.setDisable(true);
+    	dos.setDisable(true);
+    	tres.setDisable(true);
+    	cuatro.setDisable(true);
     }
 	
 	@FXML
@@ -34,8 +40,7 @@ public class BuscarDepartamentosControlador implements Initializable{
 	
 	@FXML
     void btnSiguienteBuscarDepartamentos(ActionEvent event) {	
-		if (contador < departamentos.size()){
-			
+		if (contador < departamentos.size()){		
 			textArea.setText(departamentos.get(contador));
 			contador = contador + 1;			
 		}
@@ -69,5 +74,10 @@ public class BuscarDepartamentosControlador implements Initializable{
 		contador = 1;
 		nombre.clear();
 		textArea.setText(departamentos.get(0));
+		
+		uno.setDisable(false);
+    	dos.setDisable(false);
+    	tres.setDisable(false);
+    	cuatro.setDisable(false);
     }
 }

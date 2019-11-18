@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 public class BuscarEmpleadosControlador implements Initializable{
@@ -17,6 +18,7 @@ public class BuscarEmpleadosControlador implements Initializable{
 	public JFXTextField nombre;
 	public JFXTextField apellido;
 	public JFXTextField ID;
+	public Button uno, dos, tres, cuatro;
 	ArrayList<String> empleados = Main.modelo.getGestor().obtenerTodosLosEmpleados();
 	int contador = 1;
 	
@@ -41,12 +43,9 @@ public class BuscarEmpleadosControlador implements Initializable{
 	@FXML
     void btnAtrasBuscarEmpleados(ActionEvent event) {
 		if (contador == empleados.size()){
-			
 			contador = contador - 1;	
-			textArea.setText(empleados.get(contador));
-			
-		} else if (0 < contador) {
-			
+			textArea.setText(empleados.get(contador));	
+		} else if (0 < contador) {		
 			contador = contador - 1;	
 			textArea.setText(empleados.get(contador));
 		}
@@ -55,11 +54,25 @@ public class BuscarEmpleadosControlador implements Initializable{
 	@FXML
     void btnBuscarNombreBuscarEmpleados(ActionEvent event) {
     	textArea.setText(Main.modelo.getGestor().obtenerEmpleados(nombre.getText(), apellido.getText()));
+    	
+    	uno.setDisable(true);
+    	dos.setDisable(true);
+    	tres.setDisable(true);
+    	cuatro.setDisable(true);
     }
 	
 	@FXML
     void btnBuscarIDBuscarEmpleados(ActionEvent event) {
-    	textArea.setText(Main.modelo.getGestor().obtenerEmpleadosPorID(Integer.parseInt(ID.getText())));
+		if (ID.getText().equals("")) {
+			textArea.setText("Empleado no encontrado");
+		} else {
+			textArea.setText(Main.modelo.getGestor().obtenerEmpleadosPorID(Integer.parseInt(ID.getText())));
+		}
+
+    	uno.setDisable(true);
+    	dos.setDisable(true);
+    	tres.setDisable(true);
+    	cuatro.setDisable(true);
     }
 	
 	@FXML
@@ -81,5 +94,10 @@ public class BuscarEmpleadosControlador implements Initializable{
 		apellido.clear();
 		ID.clear();
 		textArea.setText(empleados.get(0));
+		
+		uno.setDisable(false);
+    	dos.setDisable(false);
+    	tres.setDisable(false);
+    	cuatro.setDisable(false);
 	}
 }

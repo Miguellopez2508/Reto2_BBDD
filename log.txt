@@ -2,3 +2,14 @@
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
 18 11 2019 8:11 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:6 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:7 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:11 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:11 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:11 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:12 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:31 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:31 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:31 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:34 . Clase: class Controlador.Main. Info: Programa iniciado
+18 11 2019 13:34 . Clase: class Controlador.Main. Info: Programa iniciado
