@@ -2,6 +2,7 @@ package Controlador;
 
 import javafx.stage.Stage;
 import Conexion.Textos;
+import Logger.Log;
 import Modelo.Modelo;
 import javafx.application.Application;
 import java.io.IOException;
@@ -14,9 +15,10 @@ public class Main extends Application {
 	
 	public static Modelo modelo;
 	public static Controlador controlador;
-	public static Stage stage;
-	
+	public static Stage stage;	
 	public static Textos textos;
+	
+	public static Log log = Log.getInstance();
 	
 	/**
      * Método que inicia el programa usando el metodo start
@@ -34,12 +36,15 @@ public class Main extends Application {
         Main.stage = stage;
         
         iniciarPrograma();
+        
+        log.escribirLogger("Programa iniciado", this);
        
         modelo.setPrimeraVezDesdeBDD();
         
         if (modelo.primeraVez) {
         	modelo.getModificar().crearPrimeraVez();
         	cargarBasesDeDatos();
+        	log.escribirLogger("Cargados los datos por primera vez", this);
         }
     }
 	
@@ -71,6 +76,8 @@ public class Main extends Application {
     	 for (int i = 0; i < modelo.getEmpleados().size(); i++) {
     		 modelo.getModificar().insertarEmpleados(modelo.getEmpleados().get(i));
     	 }
+    	 
+    	 
     }
     
 

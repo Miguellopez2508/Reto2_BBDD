@@ -29,7 +29,7 @@ public class Log {
         try {
         	Calendar fecha = Calendar.getInstance();
         	FileWriter fw = abrirArchivo(ruta);
-        	fw.write(fecha.get(Calendar.DAY_OF_MONTH) + " " + (fecha.get(Calendar.MONTH)+1) + " " + fecha.get(Calendar.YEAR) + ". Clase: " + objeto.getClass() + ". Info:" + mensaje + "\r\n");
+        	fw.write(fecha.get(Calendar.DAY_OF_MONTH) + " " + (fecha.get(Calendar.MONTH)+1) + " " + fecha.get(Calendar.YEAR) + " " + fecha.get(Calendar.HOUR_OF_DAY) + ":" + fecha.get(Calendar.MINUTE) + " " + ". Clase: " + objeto.getClass() + ". Info: " + mensaje + "\r\n");
         	cerrarArchivo(fw);
            
         } catch (SecurityException e) {

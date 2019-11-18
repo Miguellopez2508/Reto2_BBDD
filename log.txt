@@ -1,13 +1,4 @@
-13 11 2019. Clase: class Conexion.ModificarBD. Info:Cannot create PoolableConnectionFactory (Communications link failure
+18 11 2019 8:11 . Clase: class Conexion.ModificarBD. Info: Cannot create PoolableConnectionFactory (Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
-13 11 2019. Clase: class Conexion.ModificarBD. Info:Cannot create PoolableConnectionFactory (Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
-13 11 2019. Clase: class Conexion.ModificarBD. Info:Cannot create PoolableConnectionFactory (Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)-----13 11 2019. Clase: class Conexion.ModificarBD. Info:Cannot create PoolableConnectionFactory (Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
-13 11 2019. Clase: class Conexion.ModificarBD. Info:Cannot create PoolableConnectionFactory (Communications link failure 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+18 11 2019 8:11 . Clase: class Controlador.Main. Info: Programa iniciado
