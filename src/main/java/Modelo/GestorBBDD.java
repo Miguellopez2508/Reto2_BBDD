@@ -18,8 +18,11 @@ public class GestorBBDD {
 		this.modificar = modificar;
 	}
 	
-	public ArrayList<String> obtenerGerentes()
-	{
+	/**
+	 * 
+	 * @return
+	 */
+	public ArrayList<String> obtenerGerentes() {
 		ResultSet result = modificar.verGerentes();
 		ArrayList<String> gerentes = new ArrayList<String>();
 		
@@ -38,14 +41,14 @@ public class GestorBBDD {
 			log.escribirLogger(e.getMessage(), this);
 		}
 		
-		
 		return gerentes;
-	
-	
 	}
 	
-	public ArrayList<String> obtenerDepartamentos()
-	{
+	/**
+	 * 
+	 * @return
+	 */
+	public ArrayList<String> obtenerDepartamentos() {
 		ResultSet result = modificar.verDepartamentos();
 		ArrayList<String> gerentes = new ArrayList<String>();
 		
@@ -61,14 +64,16 @@ public class GestorBBDD {
 			log.escribirLogger(e.getMessage(), this);
 		}
 		
-		
 		return gerentes;
-	
-	
 	}
 	
-	public String obtenerEmpleados(String nombre, String apellido)
-	{
+	/**
+	 * 
+	 * @param nombre
+	 * @param apellido
+	 * @return
+	 */
+	public String obtenerEmpleados(String nombre, String apellido) {
 		ResultSet result = modificar.buscarEmpleado(nombre, apellido);	
 		String acumular = "";
 		try {
@@ -100,14 +105,15 @@ public class GestorBBDD {
 			acumular= "Empleado no encontrado";
 		}
 			
-		
 		return acumular;
-	
-	
 	}
 	
-	public String obtenerDepartamentos(String nombre)
-	{
+	/**
+	 * 
+	 * @param nombre
+	 * @return
+	 */
+	public String obtenerDepartamentos(String nombre) {
 		ResultSet result = modificar.buscarDepartamento(nombre);
 		String acumular = "";
 		try {
@@ -128,16 +134,17 @@ public class GestorBBDD {
 		
 		if (acumular == "") {
 			acumular= "Departamento no encontrado";
-		}
-			
+		}	
 		
 		return acumular;
-	
-	
 	}
 	
-	public String obtenerEmpleadosPorID(int ID)
-	{
+	/**
+	 * 
+	 * @param ID
+	 * @return
+	 */
+	public String obtenerEmpleadosPorID(int ID) {
 		ResultSet result = modificar.buscarEmpleadosPorID(ID);	
 		String acumular = "";
 		try {
@@ -169,21 +176,20 @@ public class GestorBBDD {
 			acumular= "Empleado no encontrado";
 		}
 			
-		
 		return acumular;
-	
 	}
 
-	
-	public ArrayList<String> obtenerTodosLosEmpleados()
-	{
+	/**
+	 * 
+	 * @return
+	 */
+	public ArrayList<String> obtenerTodosLosEmpleados() {
 		ResultSet result = modificar.verTodosLosEmpleados();
 		String acumular="";
 		ArrayList<String> empleados = new ArrayList<String>();
 		
 		try {
-			while(result.next()) {
-				
+			while(result.next()) {			
 				int ID = result.getInt("ID");
 				int salario = result.getInt("Salario");
 				String nombre1 = result.getString("Nombre");
@@ -203,20 +209,19 @@ public class GestorBBDD {
 						"EsJefe: " + esjefe;	
 				
 				empleados.add(acumular);
-
 			}
 		} catch (SQLException e) {
 			log.escribirLogger(e.getMessage(), this);
 		}
 
-		
 		return empleados;
-	
-	
 	}
 	
-	public ArrayList<String> obtenerTodosLosDepartamentos()
-	{
+	/**
+	 * 
+	 * @return
+	 */
+	public ArrayList<String> obtenerTodosLosDepartamentos() {
 		ResultSet result = modificar.verTodosLosDepartamentos();
 		String acumular="";
 		ArrayList<String> departamentos = new ArrayList<String>();
@@ -305,9 +310,13 @@ public class GestorBBDD {
 		return acumular;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean primeraVezBoleano() {
 		ResultSet result = modificar.comprobarPrimeraVez();
-		boolean primera=true;
+		boolean primera = true;
 		
 		try {
 			while(result.next()) {
@@ -319,6 +328,4 @@ public class GestorBBDD {
 
 		return primera;
 	}
-	
-	
 }

@@ -13,15 +13,13 @@ public class Modelo {
 	private GestorValidaciones gestorV;
 	public boolean primeraVez;
 	
-	public Modelo() {
-		
+	public Modelo() {	
 		this.empleados = new ArrayList<Empleado>();
 		this.departamentos =  new ArrayList<Departamento>();
 		this.modificar = new ModificarBD();
 		this.gestor = new GestorBBDD(this.modificar);
 		this.gestorV = new GestorValidaciones();
-		this.primeraVez = false;
-		
+		this.primeraVez = false;	
 	}
 
 	public void setPrimeraVezDesdeBDD() {

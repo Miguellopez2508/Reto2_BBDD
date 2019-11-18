@@ -8,12 +8,14 @@ import Logger.Log;
 
 public class GestorValidaciones {
 	
-
-	 
+	/**
+	 * 
+	 * @param panelEmple
+	 * @return
+	 */
 	public boolean validarEmpleado(EmpleadoControlador panelEmple) {
 		String pattern = "\\d*";
-		
-		
+			
 		if(panelEmple.tf1.getText().isEmpty()) {
 			Main.controlador.mostrarMensaje(panelEmple.panel, "Campo 'Nombre' vacío.");
 			return false;
@@ -63,20 +65,20 @@ public class GestorValidaciones {
 		return true;
 	}
 	
-	public boolean validarDepartamento(DepartamentoControlador panelDepart) {
-		
+	/**
+	 * 
+	 * @param panelDepart
+	 * @return
+	 */
+	public boolean validarDepartamento(DepartamentoControlador panelDepart) {	
 		
 		if(panelDepart.tf1.getText().isEmpty()) {
 			Main.controlador.mostrarMensaje(panelDepart.panel, "Campo 'Nombre' vacío.");
 			return false;
-		}
-		
-		else if(panelDepart.tf2.getText().isEmpty()) {
+		} else if(panelDepart.tf2.getText().isEmpty()) {
 			Main.controlador.mostrarMensaje(panelDepart.panel, "Campo 'Localizacion' vacío.");
 			return false;
 		}
-		
-		
 		return true;
 	}
 }
